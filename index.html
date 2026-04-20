@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06060c">
+<title>Descubra o que está te travando — Hard Mode Lifestyle</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1587272927987010');fbq('track','PageView');
+</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","weqhpv0nf7");</script>
+
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESET & VARIÁVEIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#06060c;min-height:100%}
+
+:root{
+  --bg:#06060c;--bg2:#0b0b14;
+  --surface-dark:#0b0b14;--surface-dark-2:#11111a;
+  --surface-light:#ffffff;--surface-light-2:#f5f5f7;
+  --card:rgba(255,255,255,0.045);--card-h:rgba(255,255,255,0.065);
+  --border:rgba(255,255,255,0.08);--border-h:rgba(255,255,255,0.14);
+  --purple:#5e17eb;--purple-lt:#6d28f0;--purple-soft:#7b3ff2;
+  --white:#f0eaf8;--muted:rgba(240,234,248,0.68);--dim:rgba(240,234,248,0.44);
+  --text-dark:#121212;--muted-dark:rgba(18,18,18,0.74);--dim-dark:rgba(18,18,18,0.52);
+  --border-dark:rgba(18,18,18,0.10);
+  --r:16px;--pad:20px;--max:1160px;--max-narrow:920px;
+  --shadow-sm:0 10px 30px rgba(0,0,0,0.14);--shadow-md:0 18px 50px rgba(0,0,0,0.20);
+}
+
+body{
+  width:100%;margin:0;padding:0;min-height:100%;
+  background:var(--bg);color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+p{text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+img,iframe,video{max-width:100%;display:block}
+a,button{-webkit-tap-highlight-color:transparent}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   QUIZ SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+#quiz-section{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 0%,rgba(94,23,235,.10) 0%,transparent 58%),
+    radial-gradient(circle at 14% 12%,rgba(94,23,235,.10),transparent 24%),
+    radial-gradient(circle at 86% 24%,rgba(94,23,235,.08),transparent 22%),
+    linear-gradient(180deg,#06060c 0%,#0b0b14 100%);
+}
+
+/* Header with logo */
+.q-header{
+  padding:18px var(--pad) 0;
+  display:flex;justify-content:center;align-items:center;
+}
+.q-logo{height:42px;width:auto;object-fit:contain;opacity:.92}
+
+/* Progress bar */
+.q-prog-wrap{
+  padding:20px var(--pad) 0;
+  max-width:580px;margin:0 auto;width:100%;
+}
+.q-prog-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:8px;
+}
+.q-prog-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+}
+.q-prog-count{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+}
+.q-prog-bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.q-prog-fill{
+  height:100%;background:linear-gradient(90deg,#5e17eb,#7b3ff2);
+  border-radius:2px;transition:width .4s ease;
+}
+
+/* Screens */
+.q-screen{display:none;flex-direction:column;align-items:center;padding:32px var(--pad) 48px}
+.q-screen.active{display:flex}
+
+.q-content{width:100%;max-width:560px}
+
+/* Fade-in animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.q-screen.active .q-content{animation:fadeUp .36s ease both}
+
+/* ── INTRO SCREEN ── */
+.q-intro-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(94,23,235,.12);border:1px solid rgba(94,23,235,.28);
+  border-radius:50px;padding:5px 14px;margin-bottom:20px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple-soft);
+}
+.q-intro-tag::before{content:'●';font-size:7px}
+
+.q-intro-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:clamp(34px,10vw,54px);text-transform:uppercase;
+  line-height:.94;letter-spacing:-.01em;color:var(--white);
+  margin-bottom:16px;text-wrap:balance;
+}
+.q-intro-title em{
+  font-style:normal;
+  background:linear-gradient(135deg,#5e17eb 0%,#7b3ff2 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.q-intro-sub{
+  font-size:16px;color:var(--muted);line-height:1.65;
+  margin-bottom:30px;max-width:440px;
+}
+
+.q-intro-chips{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;
+}
+.q-intro-chip{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;color:var(--dim);letter-spacing:.04em;
+}
+.q-intro-chip::before{
+  content:'';display:block;width:16px;height:16px;
+  background:rgba(94,23,235,.18);border:1px solid rgba(94,23,235,.3);
+  border-radius:50%;flex-shrink:0;
+  background-image:url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3L3 5L7 1' stroke='%237b3ff2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+}
+
+/* ── QUESTION SCREEN ── */
+.q-num{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--purple-soft);margin-bottom:10px;
+}
+
+.q-text{
+  font-family:'Barlow',sans-serif;font-weight:600;
+  font-size:clamp(18px,5vw,23px);color:var(--white);
+  line-height:1.35;margin-bottom:22px;text-wrap:balance;
+}
+
+/* Options */
+.q-options{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+
+.q-opt{
+  display:flex;align-items:flex-start;gap:13px;
+  padding:14px 17px;
+  background:rgba(255,255,255,.04);
+  border:1.5px solid rgba(255,255,255,.09);
+  border-radius:12px;cursor:pointer;
+  text-align:left;width:100%;
+  transition:background .18s,border-color .18s;
+  color:var(--muted);font-size:15px;line-height:1.45;
+}
+.q-opt:hover{background:rgba(255,255,255,.065);border-color:rgba(94,23,235,.3)}
+.q-opt.selected{border-color:#5e17eb;background:rgba(94,23,235,.13);color:var(--white)}
+
+/* Custom checkbox */
+.q-check{
+  flex-shrink:0;margin-top:1px;
+  width:22px;height:22px;
+  border:2px solid rgba(255,255,255,.22);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .18s,border-color .18s;
+}
+.q-opt.selected .q-check{background:#5e17eb;border-color:#5e17eb}
+
+.q-check-mark{
+  display:none;
+  width:5px;height:9px;
+  border:2.5px solid #fff;border-top:none;border-left:none;
+  transform:rotate(45deg);margin-top:-2px;
+}
+.q-opt.selected .q-check-mark{display:block}
+
+/* Buttons */
+.q-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:15px;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;border:none;border-radius:50px;
+  padding:0 28px;height:52px;width:100%;
+  background:linear-gradient(135deg,#5e17eb 0%,#6922ee 100%);
+  color:var(--white);
+  box-shadow:0 8px 24px rgba(94,23,235,.34);
+  transition:transform .2s,box-shadow .2s,opacity .2s;
+}
+.q-btn:disabled{opacity:.32;cursor:not-allowed;box-shadow:none}
+.q-btn:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(94,23,235,.44)}
+.q-btn:not(:disabled):active{transform:scale(.98)}
+
+.q-btn-start{max-width:340px;margin:0 auto}
+
+/* ── LOADING SCREEN ── */
+.q-loading{text-align:center;padding:40px 0}
+.q-loading-icon{
+  width:60px;height:60px;margin:0 auto 24px;
+  border-radius:50%;background:rgba(94,23,235,.15);
+  border:1px solid rgba(94,23,235,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+  animation:pulse-icon 1.8s ease-in-out infinite;
+}
+@keyframes pulse-icon{0%,100%{box-shadow:0 0 0 0 rgba(94,23,235,.25)}50%{box-shadow:0 0 0 12px rgba(94,23,235,0)}}
+
+.q-loading-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:20px;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--white);margin-bottom:6px;
+}
+.q-loading-sub{font-size:14px;color:var(--dim);margin-bottom:28px}
+
+.q-loading-bar-wrap{
+  max-width:300px;margin:0 auto 24px;height:5px;
+  background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;
+}
+.q-loading-bar-fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,#5e17eb,#7b3ff2);
+  border-radius:3px;
+  animation:load-bar 2.8s ease forwards;
+}
+@keyframes load-bar{0%{width:0%}25%{width:28%}55%{width:62%}80%{width:84%}100%{width:100%}}
+
+.q-loading-items{
+  max-width:280px;margin:0 auto;text-align:left;
+  display:flex;flex-direction:column;gap:10px;
+}
+.q-loading-item{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:var(--dim);
+  opacity:0;transition:opacity .5s;
+}
+.q-loading-item.show{opacity:1;color:var(--muted)}
+.q-loading-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#5e17eb;flex-shrink:0;
+}
+
+/* ── DIAGNOSIS SCREEN ── */
+.diag-header{margin-bottom:24px;text-align:center}
+.diag-tag{
+  display:inline-block;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--purple-soft);margin-bottom:10px;
+}
+.diag-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:clamp(28px,8vw,40px);text-transform:uppercase;
+  letter-spacing:-.01em;line-height:.98;color:var(--white);
+  text-wrap:balance;margin-bottom:8px;
+}
+.diag-title em{
+  font-style:normal;
+  background:linear-gradient(135deg,#5e17eb 0%,#7b3ff2 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.diag-sub{font-size:15px;color:var(--muted);line-height:1.6}
+
+.diag-blocks{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+
+.diag-block{
+  padding:20px 20px;border-radius:14px;position:relative;overflow:hidden;
+}
+.diag-block::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(94,23,235,.7),transparent);
+}
+.diag-block--found{
+  background:rgba(94,23,235,.10);border:1px solid rgba(94,23,235,.22);
+}
+.diag-block--action{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+}
+.diag-block__lbl{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:8px;
+}
+.diag-block--found .diag-block__lbl{color:#7b3ff2}
+.diag-block--action .diag-block__lbl{color:var(--dim)}
+
+.diag-block__title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:15px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--white);margin-bottom:8px;
+}
+.diag-block__text{font-size:14px;color:var(--muted);line-height:1.68}
+.diag-block__text strong{color:var(--white)}
+
+/* VSL in diagnosis */
+.diag-vsl-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);text-align:center;margin-bottom:8px;
+}
+.diag-vsl-wrap{
+  border-radius:14px;border:1px solid var(--border);overflow:hidden;
+  position:relative;aspect-ratio:16/9;
+  background:rgba(0,0,0,.35);box-shadow:var(--shadow-md);margin-bottom:20px;
+}
+.diag-vsl-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+
+.diag-cta-note{
+  text-align:center;font-size:12px;color:var(--dim);
+  margin-top:10px;letter-spacing:.04em;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SALES SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+#sales-section{display:none}
+
+.sales-header{
+  background:rgba(6,6,12,.96);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  padding:14px var(--pad);
+  display:flex;align-items:center;justify-content:center;
+  position:sticky;top:0;z-index:200;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.sales-logo{height:38px;width:auto;object-fit:contain}
+
+/* ── Sales page layout ── */
+#sales-section .wrap{
+  position:relative;width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+}
+#sales-section .wrap--narrow{max-width:var(--max-narrow)}
+
+#sales-section section{position:relative;padding:60px 0}
+
+#sales-section .section-light{
+  background:linear-gradient(180deg,var(--surface-light) 0%,var(--surface-light-2) 100%);
+  color:var(--text-dark);
+}
+#sales-section .section-soft-dark{
+  background:linear-gradient(180deg,rgba(17,17,26,.96) 0%,rgba(11,11,20,.98) 100%);
+  color:var(--white);
+}
+#sales-section .section-dark{
+  background:linear-gradient(180deg,rgba(255,255,255,.01),rgba(255,255,255,0));
+  color:var(--white);
+}
+
+#sales-section .display{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  line-height:1;text-transform:uppercase;letter-spacing:-.01em;
+}
+#sales-section .eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--purple-soft);line-height:1.5;display:inline-block;
+}
+#sales-section .eyebrow--lg{font-size:13px}
+#sales-section .divider{
+  width:34px;height:2px;
+  background:linear-gradient(90deg,var(--purple),transparent);
+  border-radius:2px;margin:14px 0 24px;
+}
+#sales-section .section-heading{max-width:760px;margin-bottom:32px}
+#sales-section .section-title{
+  font-size:clamp(28px,10vw,56px);text-wrap:balance;line-height:.96;
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;
+}
+#sales-section .section-sub{font-size:15px;color:var(--muted);margin-top:10px;max-width:640px;line-height:1.6}
+#sales-section .body-p{font-size:16px;color:var(--muted);margin-bottom:14px}
+#sales-section .body-p strong{color:var(--white);font-weight:600}
+
+/* Light section text overrides */
+#sales-section .section-light .section-title,
+#sales-section .section-light .body-p strong{color:var(--text-dark)}
+#sales-section .section-light .section-sub,
+#sales-section .section-light .body-p,
+#sales-section .section-light .bonus-card__desc,
+#sales-section .section-light .bonus-card__val,
+#sales-section .section-light .offer-card__includes,
+#sales-section .section-light .offer-stack li,
+#sales-section .section-light .guarantee__text,
+#sales-section .section-light .faq-a,
+#sales-section .section-light .close__sub,
+#sales-section .section-light .foundation-note,
+#sales-section .section-light .lesson-card__learn,
+#sales-section .section-light .lesson-card__shift{color:var(--muted-dark)}
+#sales-section .section-light .eyebrow{color:var(--purple)}
+#sales-section .section-light .offer-badge::before,
+#sales-section .section-light .faq-q span{color:var(--purple)}
+
+/* Buttons */
+#sales-section .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:16px;letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;border:none;border-radius:50px;padding:0 28px;min-height:54px;
+  transition:transform .2s ease,box-shadow .2s ease;text-align:center;
+}
+#sales-section .btn--primary{
+  background:linear-gradient(135deg,#5e17eb 0%,#6922ee 100%);
+  color:var(--white);box-shadow:0 8px 24px rgba(94,23,235,.34);
+}
+#sales-section .btn--ghost{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border-h);color:var(--white);
+}
+#sales-section .btn--stacked{flex-direction:column;gap:3px;padding:10px 24px;white-space:normal;line-height:1.1}
+#sales-section .btn__line-main{display:block;font-size:16px}
+#sales-section .btn__line-sub{display:block;font-size:15px;letter-spacing:.12em;opacity:.92}
+#sales-section .btn__old-price{text-decoration:line-through;text-decoration-thickness:1.5px;opacity:.78}
+#sales-section .price-anchor{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:16px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dim-dark);margin-bottom:8px;
+}
+#sales-section .price-anchor span{text-decoration:line-through;text-decoration-thickness:1.5px}
+#sales-section .section-light .price-anchor{color:var(--dim-dark)}
+#sales-section .cta-note{text-align:center;font-size:12px;color:var(--dim);letter-spacing:.04em;margin-top:12px}
+
+@media(hover:hover){
+  #sales-section .btn--primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(94,23,235,.40)}
+  #sales-section .btn--ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.06);border-color:rgba(94,23,235,.35)}
+}
+
+/* Testimonials */
+#sales-section .testimonials-track{
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(258px,84%);
+  gap:12px;overflow-x:auto;padding:2px 2px 8px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+#sales-section .testimonials-track::-webkit-scrollbar{display:none}
+#sales-section .testimonials-track::after{content:'';width:2px}
+#sales-section .testimonial{
+  scroll-snap-align:start;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.80));
+  border:1px solid rgba(18,18,18,.10);border-radius:14px;
+  box-shadow:0 12px 28px rgba(19,13,34,.06);padding:18px 16px;min-height:100%;
+}
+#sales-section .testimonial__head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+#sales-section .testimonial__photo{width:68px;height:68px;border-radius:16px;object-fit:cover;flex-shrink:0;box-shadow:0 8px 20px rgba(0,0,0,.10)}
+#sales-section .testimonial__text{font-size:14px;line-height:1.58;margin-bottom:12px;color:var(--muted-dark)}
+#sales-section .testimonial__author{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;line-height:1.05;color:var(--text-dark)}
+#sales-section .testimonial__meta{font-size:12px;margin-top:4px;color:var(--muted-dark)}
+#sales-section .testimonial__pill{display:inline-flex;margin-bottom:12px;padding:5px 10px;border-radius:999px;background:rgba(94,23,235,.08);color:var(--purple);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase}
+
+/* For who */
+#sales-section .forwho-grid{display:grid;grid-template-columns:1fr;gap:16px}
+#sales-section .forwho-col{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));border:1px solid var(--border);border-radius:var(--r);padding:20px 16px;box-shadow:var(--shadow-sm)}
+#sales-section .forwho-col--yes{border-color:rgba(94,23,235,.28);background:linear-gradient(180deg,rgba(94,23,235,.11),rgba(255,255,255,.03))}
+#sales-section .forwho-col__title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.20em;text-transform:uppercase;margin-bottom:14px}
+#sales-section .forwho-col--yes .forwho-col__title{color:var(--purple-soft)}
+#sales-section .forwho-col--no .forwho-col__title{color:var(--dim)}
+#sales-section .forwho-list{list-style:none}
+#sales-section .forwho-list li{position:relative;padding:11px 0 11px 18px;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);line-height:1.5}
+#sales-section .forwho-list li:last-child{border-bottom:none}
+#sales-section .forwho-list--yes li::before{content:'•';position:absolute;left:0;color:var(--purple-soft);font-weight:700;font-size:20px;line-height:1}
+#sales-section .forwho-list--no li::before{content:'—';position:absolute;left:0;color:var(--dim);font-weight:700}
+
+/* Foundation */
+#sales-section .foundation-grid{display:grid;grid-template-columns:1fr;gap:14px}
+#sales-section .foundation-card{background:linear-gradient(180deg,rgba(255,255,255,.90),rgba(255,255,255,.76));border:1px solid rgba(18,18,18,.10);border-radius:var(--r);box-shadow:0 14px 34px rgba(19,13,34,.06);padding:20px 16px}
+#sales-section .foundation-card__n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:44px;line-height:1;margin-bottom:14px;background:linear-gradient(135deg,rgba(94,23,235,.95),rgba(123,63,242,.28));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#sales-section .foundation-card__title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;color:var(--text-dark)}
+#sales-section .foundation-note{margin-top:10px;color:var(--muted-dark)}
+#sales-section .section-light .body-p{color:var(--muted-dark)}
+
+/* Story */
+#sales-section .story-layout{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+#sales-section .story-quote{background:linear-gradient(180deg,rgba(94,23,235,.11),rgba(255,255,255,.03));border:1px solid rgba(94,23,235,.24);border-radius:var(--r);box-shadow:var(--shadow-sm);padding:24px 22px}
+#sales-section .story-quote p{font-size:18px;font-style:italic;color:var(--white);line-height:1.65;margin-bottom:12px}
+#sales-section .story-quote .attr{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-soft)}
+
+/* Lessons */
+#sales-section .lessons-grid{display:grid;grid-template-columns:1fr;gap:16px}
+#sales-section .lesson-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:18px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));box-shadow:var(--shadow-sm);overflow:hidden}
+#sales-section .lesson-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(94,23,235,.75),transparent)}
+#sales-section .lesson-card__top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#sales-section .lesson-card__badge{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:rgba(94,23,235,.14);color:var(--white);font-size:22px;flex-shrink:0}
+#sales-section .lesson-card__n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-soft)}
+#sales-section .lesson-card__title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;color:var(--white)}
+#sales-section .lesson-card__learn{font-size:14px;color:var(--muted);line-height:1.58}
+#sales-section .lesson-card__shift{font-size:14px;color:var(--muted);line-height:1.58;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+#sales-section .lesson-card__shift strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-soft);margin-bottom:6px}
+#sales-section .section-light .lesson-card__title{color:var(--text-dark)}
+#sales-section .section-light .lesson-card__shift strong{color:var(--purple)}
+
+/* Bonuses */
+#sales-section .bonus-grid{display:grid;grid-template-columns:1fr;gap:16px}
+#sales-section .bonus-card{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.82));border:1px solid rgba(18,18,18,.10);border-radius:18px;box-shadow:0 14px 34px rgba(19,13,34,.06);display:grid;grid-template-columns:1fr}
+#sales-section .bonus-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(94,23,235,.75),transparent)}
+#sales-section .bonus-card__media{position:relative;aspect-ratio:16/6;overflow:hidden;background:#0a0a10}
+#sales-section .bonus-card__media img{width:100%;height:100%;object-fit:cover;object-position:center}
+#sales-section .bonus-card__content{padding:18px 16px 20px}
+#sales-section .bonus-card__lbl{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+#sales-section .bonus-card__title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;line-height:1.02;color:var(--text-dark)}
+#sales-section .bonus-card__desc{font-size:14px;line-height:1.56;color:var(--muted-dark)}
+#sales-section .bonus-card__val{margin-top:14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.08em;text-transform:uppercase;text-decoration:line-through;text-decoration-thickness:1.5px;color:var(--muted-dark)}
+
+/* Offer */
+#sales-section .offer-wrap{max-width:560px;margin:0 auto}
+#sales-section .offer-card{position:relative;overflow:hidden;padding:26px 18px 28px;background:linear-gradient(180deg,rgba(94,23,235,.11),rgba(255,255,255,.92));border:1px solid rgba(94,23,235,.18);border-radius:18px;box-shadow:0 14px 34px rgba(19,13,34,.06),0 10px 26px rgba(94,23,235,.08);text-align:center}
+#sales-section .offer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(94,23,235,.75),transparent)}
+#sales-section .offer-card__product{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-dark);margin-bottom:6px}
+#sales-section .offer-card__logo{width:min(100%,300px);margin:0 auto 10px}
+#sales-section .offer-card__logo img{width:100%;height:auto;display:block}
+#sales-section .offer-card__includes{font-size:16px;color:var(--muted-dark);margin-bottom:24px}
+#sales-section .offer-stack{list-style:none;text-align:left;margin-bottom:24px}
+#sales-section .offer-stack li{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:9px 0;border-bottom:1px solid var(--border-dark);font-size:15px;color:var(--muted-dark)}
+#sales-section .offer-stack li:last-child{border-bottom:none}
+#sales-section .offer-stack li span:last-child{font-size:13px;white-space:nowrap;flex-shrink:0}
+#sales-section .offer-stack__total{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;text-transform:uppercase;color:var(--text-dark)!important}
+#sales-section .offer-stack__total span:last-child{text-decoration:line-through;font-size:inherit!important}
+#sales-section .offer-price-block{margin:20px 0}
+#sales-section .price-anchor--offer{font-size:17px;margin-bottom:10px;color:var(--muted-dark)}
+#sales-section .offer-installments{font-size:18px;color:var(--muted-dark);letter-spacing:.02em;margin-bottom:8px}
+#sales-section .offer-installments--inline strong{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:38px;color:var(--text-dark);line-height:.95;margin-left:6px}
+#sales-section .offer-cash{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:21px;color:var(--text-dark)}
+#sales-section .offer-cash--inline{display:block;margin-top:4px}
+#sales-section .offer-cash--inline strong{color:var(--text-dark)}
+#sales-section .offer-cta{margin-top:24px}
+#sales-section .offer-badges{display:flex;justify-content:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+#sales-section .offer-badge{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim-dark);display:flex;align-items:center;gap:5px}
+#sales-section .offer-badge::before{content:'✓';color:var(--purple);font-weight:700}
+
+/* Guarantee */
+#sales-section .guarantee{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;padding:20px 18px;margin-top:14px;border:1px solid var(--border-dark);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.84));box-shadow:0 14px 34px rgba(19,13,34,.06)}
+#sales-section .guarantee__icon{font-size:26px;line-height:1;padding-top:1px}
+#sales-section .guarantee__title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--text-dark);margin-bottom:6px}
+#sales-section .guarantee__text{font-size:15px;color:var(--muted-dark);line-height:1.6}
+#sales-section .guarantee__text strong{color:var(--text-dark)}
+
+/* FAQ */
+#sales-section .faq-item{border-bottom:1px solid var(--border-dark);padding:18px 0}
+#sales-section .faq-item:first-of-type{border-top:1px solid var(--border-dark)}
+#sales-section .faq-q{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.03em;color:var(--text-dark);margin-bottom:8px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+#sales-section .faq-q span{color:var(--purple);flex-shrink:0;font-size:20px;line-height:1;margin-top:1px}
+#sales-section .faq-a{font-size:15px;color:var(--muted-dark);line-height:1.6}
+#sales-section .faq-a strong{color:var(--text-dark)}
+
+/* Closing */
+#sales-section .close{text-align:center}
+#sales-section .close__hl{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,10vw,66px);line-height:.98;margin-bottom:18px;text-wrap:balance;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;color:var(--white)}
+#sales-section .close__hl .close-line{display:block}
+#sales-section .close__hl em{font-style:normal;color:var(--purple-soft)}
+#sales-section .close__sub{font-size:16px;color:var(--muted);line-height:1.65;margin-bottom:34px;max-width:440px;margin-left:auto;margin-right:auto}
+#sales-section .close__cta{max-width:320px;margin:0 auto}
+#sales-section .close__final{margin-top:22px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+
+/* Footer */
+#sales-section footer{padding:24px var(--pad);background:#06060c;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:14px;color:#ffffff;line-height:1.8}
+#sales-section footer a{color:#ffffff;text-underline-offset:3px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media(min-width:640px){
+  :root{--pad:28px}
+  #sales-section section{padding:80px 0}
+  #sales-section .foundation-grid{grid-template-columns:repeat(3,1fr);gap:12px}
+  #sales-section .forwho-grid{grid-template-columns:1fr;gap:14px}
+  #sales-section .lessons-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  #sales-section .bonus-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  #sales-section .testimonials-track{grid-auto-flow:unset;grid-auto-columns:unset;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
+  #sales-section .offer-card{padding:38px 34px 42px}
+  .q-text{font-size:22px}
+}
+@media(min-width:980px){
+  :root{--pad:38px}
+  #sales-section .lessons-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #sales-section .story-layout{grid-template-columns:1.1fr .9fr;gap:42px}
+  #sales-section .forwho-grid{grid-template-columns:1.15fr .85fr}
+}
+@media(min-width:1180px){
+  :root{--pad:48px}
+  #sales-section .section-title{font-size:clamp(36px,4vw,54px)}
+}
+</style>
+</head>
+<body>
+
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1587272927987010&ev=PageView&noscript=1"/></noscript>
+
+<!-- ██████████████████████████████████████████
+     QUIZ SECTION
+██████████████████████████████████████████ -->
+<div id="quiz-section">
+
+  <!-- Logo header -->
+  <div class="q-header">
+    <img class="q-logo" src="./assets/img/logo-hard-mode.png" alt="Hard Mode Lifestyle">
+  </div>
+
+  <!-- Progress bar (hidden on intro/loading/diagnosis) -->
+  <div class="q-prog-wrap" id="prog-wrap" style="display:none">
+    <div class="q-prog-meta">
+      <span class="q-prog-label">Diagnóstico</span>
+      <span class="q-prog-count" id="prog-count">Pergunta 1 de 6</span>
+    </div>
+    <div class="q-prog-bar">
+      <div class="q-prog-fill" id="prog-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- ── INTRO ── -->
+  <div class="q-screen active" id="screen-intro">
+    <div class="q-content">
+      <div class="q-intro-tag">Diagnóstico gratuito</div>
+      <h1 class="q-intro-title">
+        Descobre o que<br>
+        <em>tá travando você</em>
+      </h1>
+      <p class="q-intro-sub">
+        Responde 6 perguntas rápidas e a gente te mostra exatamente qual é o problema — e o que precisa ser feito agora.
+      </p>
+      <div class="q-intro-chips">
+        <span class="q-intro-chip">Leva menos de 2 minutos</span>
+        <span class="q-intro-chip">100% gratuito</span>
+        <span class="q-intro-chip">Resultado imediato</span>
+      </div>
+      <div style="max-width:340px;margin:0 auto">
+        <button class="q-btn" onclick="startQuiz()">Começar o diagnóstico →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Q1 ── -->
+  <div class="q-screen" id="screen-q1">
+    <div class="q-content">
+      <div class="q-num">Pergunta 1 de 6</div>
+      <h2 class="q-text">Você já tentou mudar antes — e voltou pro mesmo lugar?</h2>
+      <div class="q-options" id="opts-q1">
+        <button class="q-opt" onclick="selectOpt(this,'q1')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Sim, várias vezes. Começo bem e paro em pouco tempo.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q1')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Sim, tentei. Mas nunca durou nem um mês de verdade.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q1')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Ainda não tentei de verdade. Fico adiando há um tempo.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q1')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Já tentei de tudo. Não sei mais o que funciona pra mim.
+        </button>
+      </div>
+      <button class="q-btn" id="btn-q1" disabled onclick="nextStep('q2')">Próxima pergunta →</button>
+    </div>
+  </div>
+
+  <!-- ── Q2 ── -->
+  <div class="q-screen" id="screen-q2">
+    <div class="q-content">
+      <div class="q-num">Pergunta 2 de 6</div>
+      <h2 class="q-text">O que mais te derruba quando você tenta se organizar?</h2>
+      <div class="q-options" id="opts-q2">
+        <button class="q-opt" onclick="selectOpt(this,'q2')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          O celular e as distrações. Perco horas sem perceber.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q2')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Falta de clareza. Não sei o que realmente importa fazer.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q2')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Qualquer coisa fora do plano já me joga fora da rotina.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q2')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Falta de energia e disposição. Mal consigo fazer o básico.
+        </button>
+      </div>
+      <button class="q-btn" id="btn-q2" disabled onclick="nextStep('q3')">Próxima pergunta →</button>
+    </div>
+  </div>
+
+  <!-- ── Q3 ── -->
+  <div class="q-screen" id="screen-q3">
+    <div class="q-content">
+      <div class="q-num">Pergunta 3 de 6</div>
+      <h2 class="q-text">Como você se sente na maioria das noites quando para pra pensar?</h2>
+      <div class="q-options" id="opts-q3">
+        <button class="q-opt" onclick="selectOpt(this,'q3')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Que o dia passou e eu não construí nada que valha.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q3')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Que estou no piloto automático, sem direção real nenhuma.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q3')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Ansioso. Sei que deveria estar mais avançado do que estou.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q3')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Vazio. Tem uma sensação que falta algo que não consigo nomear.
+        </button>
+      </div>
+      <button class="q-btn" id="btn-q3" disabled onclick="nextStep('q4')">Próxima pergunta →</button>
+    </div>
+  </div>
+
+  <!-- ── Q4 ── -->
+  <div class="q-screen" id="screen-q4">
+    <div class="q-content">
+      <div class="q-num">Pergunta 4 de 6</div>
+      <h2 class="q-text">Com qual dessas situações você mais se identifica hoje?</h2>
+      <div class="q-options" id="opts-q4">
+        <button class="q-opt" onclick="selectOpt(this,'q4')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Sei o que preciso fazer, mas não consigo manter o que começo.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q4')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Não sei direito pra onde minha vida está indo.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q4')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Me sinto perdido no trabalho, nos projetos e no que construir.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q4')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Tenho vontade de mudar, mas não sei por onde começar de verdade.
+        </button>
+      </div>
+      <button class="q-btn" id="btn-q4" disabled onclick="nextStep('q5')">Próxima pergunta →</button>
+    </div>
+  </div>
+
+  <!-- ── Q5 ── -->
+  <div class="q-screen" id="screen-q5">
+    <div class="q-content">
+      <div class="q-num">Pergunta 5 de 6</div>
+      <h2 class="q-text">O que você mais quer resolver nos próximos 90 dias?</h2>
+      <div class="q-options" id="opts-q5">
+        <button class="q-opt" onclick="selectOpt(this,'q5')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Ter uma rotina real que eu consiga manter sem depender de motivação.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q5')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Ter mais foco e produzir mais no trabalho ou nos projetos pessoais.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q5')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Cuidar melhor do corpo — treino, energia e disposição.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q5')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Me sentir com mais propósito, direção e clareza de pra onde vou.
+        </button>
+      </div>
+      <button class="q-btn" id="btn-q5" disabled onclick="nextStep('q6')">Próxima pergunta →</button>
+    </div>
+  </div>
+
+  <!-- ── Q6 ── -->
+  <div class="q-screen" id="screen-q6">
+    <div class="q-content">
+      <div class="q-num">Pergunta 6 de 6</div>
+      <h2 class="q-text">Há quanto tempo você sente que está travado nessa situação?</h2>
+      <div class="q-options" id="opts-q6">
+        <button class="q-opt" onclick="selectOpt(this,'q6')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Menos de 6 meses. É coisa bem recente.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q6')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Entre 6 meses e 1 ano.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q6')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Entre 1 e 3 anos.
+        </button>
+        <button class="q-opt" onclick="selectOpt(this,'q6')">
+          <span class="q-check"><span class="q-check-mark"></span></span>
+          Mais de 3 anos. Já virou um padrão na minha vida.
+        </button>
+      </div>
+      <button class="q-btn" id="btn-q6" disabled onclick="goToLoading()">Ver meu resultado →</button>
+    </div>
+  </div>
+
+  <!-- ── LOADING ── -->
+  <div class="q-screen" id="screen-loading">
+    <div class="q-content">
+      <div class="q-loading" style="text-align:center">
+        <div class="q-loading-icon">🧠</div>
+        <div class="q-loading-title">Analisando suas respostas...</div>
+        <p class="q-loading-sub">Aguenta aí, leva só alguns segundos</p>
+        <div class="q-loading-bar-wrap">
+          <div class="q-loading-bar-fill" id="load-bar"></div>
+        </div>
+        <div class="q-loading-items">
+          <div class="q-loading-item" id="li1"><span class="q-loading-dot"></span>Identificando o padrão central</div>
+          <div class="q-loading-item" id="li2"><span class="q-loading-dot"></span>Avaliando os bloqueios principais</div>
+          <div class="q-loading-item" id="li3"><span class="q-loading-dot"></span>Cruzando com o perfil Hard Mode</div>
+          <div class="q-loading-item" id="li4"><span class="q-loading-dot"></span>Montando o diagnóstico personalizado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DIAGNOSIS + VSL ── -->
+  <div class="q-screen" id="screen-diagnosis">
+    <div class="q-content">
+
+      <div class="diag-header">
+        <div class="diag-tag">Seu resultado</div>
+        <h2 class="diag-title">
+          O diagnóstico<br><em>está pronto.</em>
+        </h2>
+        <p class="diag-sub">Com base nas suas respostas, encontramos o padrão exato que está te segurando.</p>
+      </div>
+
+      <div class="diag-blocks">
+
+        <div class="diag-block diag-block--found">
+          <div class="diag-block__lbl">O que apareceu no seu resultado</div>
+          <div class="diag-block__title">O problema não é falta de vontade</div>
+          <p class="diag-block__text">
+            Com base nas suas respostas, ficou claro que o problema não é preguiça nem falta de esforço. Você já tentou mudar, já se prometeu novos começos — e mesmo assim o ciclo se repete. Isso acontece porque o que você vem usando até agora ataca os sintomas sem tocar na raiz: você está tentando construir comportamentos novos em cima de uma fundação que ainda não foi construída. <strong>Sem essa fundação, qualquer método funciona por duas semanas e para.</strong> Sempre. Não é culpa do método, não é culpa de você. É falta de alicerce.
+          </p>
+        </div>
+
+        <div class="diag-block diag-block--action">
+          <div class="diag-block__lbl">O que precisa ser feito agora</div>
+          <div class="diag-block__title">Construir os três pilares que sustentam tudo</div>
+          <p class="diag-block__text">
+            O próximo passo não é mais uma técnica de produtividade nem mais uma tentativa de força de vontade. É construir os três pilares que o mercado de desenvolvimento pessoal nunca te entregou ao mesmo tempo: a presença física que gera confiança, o trabalho com direção que gera legado, e a vida interior que te mantém de pé nos dias em que tudo cede. <strong>O Protocolo de Força Prática foi criado exatamente pra isso.</strong> São 10 aulas que constroem essa base do zero — sem precisar de motivação pra sustentar. Quem passa por ele para de perguntar "por que eu não consigo?" e começa a agir a partir de quem decidiu ser.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- VSL -->
+      <p class="diag-vsl-label">Assista antes de continuar</p>
+      <div class="diag-vsl-wrap">
+        <iframe
+          src="https://player.mediadelivery.net/play/636159/7207a3bc-40a9-42f3-86de-cddacef400b7"
+          title="Protocolo de Força Prática"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <button class="q-btn" onclick="showSalesPage()">
+        QUERO CONHECER O PROTOCOLO →
+      </button>
+      <p class="diag-cta-note">Acesso imediato · Garantia de 7 dias</p>
+
+    </div>
+  </div>
+
+</div><!-- /quiz-section -->
+
+
+<!-- ██████████████████████████████████████████
+     SALES SECTION
+██████████████████████████████████████████ -->
+<div id="sales-section">
+
+  <!-- Slim header with logo only -->
+  <header class="sales-header">
+    <img class="sales-logo" src="./assets/img/logo-hard-mode.png" alt="Hard Mode Lifestyle">
+  </header>
+
+  <!-- Testimonials -->
+  <section class="section-light">
+    <div class="wrap">
+      <div class="section-heading">
+        <h2 class="display section-title">Resultados reais.</h2>
+      </div>
+      <div class="testimonials-track">
+        <article class="testimonial">
+          <div class="testimonial__head">
+            <img class="testimonial__photo" src="./assets/img/testimonial-gabriel.png" alt="Gabriel S.">
+            <div class="testimonial__identity">
+              <div class="testimonial__author">Gabriel S.</div>
+              <div class="testimonial__meta">30 anos</div>
+            </div>
+          </div>
+          <span class="testimonial__pill">Mais constância</span>
+          <p class="testimonial__text">"Eu sempre começava a semana animado e largava tudo no meio. O protocolo me ajudou a parar de viver no improviso. Hoje minha rotina é simples, mas eu cumpro."</p>
+        </article>
+        <article class="testimonial">
+          <div class="testimonial__head">
+            <img class="testimonial__photo" src="./assets/img/testimonial-julio.png" alt="Júlio César">
+            <div class="testimonial__identity">
+              <div class="testimonial__author">Júlio César</div>
+              <div class="testimonial__meta">29 anos</div>
+            </div>
+          </div>
+          <span class="testimonial__pill">Mais clareza</span>
+          <p class="testimonial__text">"A aula do Necrológio me pegou de verdade. Eu percebi que estava só empurrando a vida com a barriga. Depois disso, cortei as distrações e comecei a fazer tudo com mais direção."</p>
+        </article>
+        <article class="testimonial">
+          <div class="testimonial__head">
+            <img class="testimonial__photo" src="./assets/img/testimonial-rodrigo.png" alt="Rodrigo M.">
+            <div class="testimonial__identity">
+              <div class="testimonial__author">Rodrigo M.</div>
+              <div class="testimonial__meta">32 anos</div>
+            </div>
+          </div>
+          <span class="testimonial__pill">Mais respeito próprio</span>
+          <p class="testimonial__text">"Não foi só produtividade. Eu voltei a treinar, melhorei meu sono e parei de me prometer coisa que eu não fazia. Isso mudou minha cabeça."</p>
+        </article>
+        <article class="testimonial">
+          <div class="testimonial__head">
+            <img class="testimonial__photo" src="./assets/img/testimonial-daniel.png" alt="Daniel L.">
+            <div class="testimonial__identity">
+              <div class="testimonial__author">Daniel L.</div>
+              <div class="testimonial__meta">31 anos</div>
+            </div>
+          </div>
+          <span class="testimonial__pill">Mais estrutura</span>
+          <p class="testimonial__text">"Eu já tinha comprado curso e largado vários. Nesse aqui eu consegui aplicar. Não é um monte de fala bonita. É direto e te coloca pra agir."</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- For who -->
+  <section class="section-soft-dark">
+    <div class="wrap">
+      <div class="section-heading">
+        <h2 class="display section-title">Pra quem é</h2>
+        <p class="section-sub">Se você sabe que está ficando para trás e não quer continuar se enganando, é pra você.</p>
+      </div>
+      <div class="forwho-grid">
+        <div class="forwho-col forwho-col--yes">
+          <p class="forwho-col__title">É pra você se...</p>
+          <ul class="forwho-list forwho-list--yes">
+            <li>você sente que sua vida não anda e já cansou de fingir que está tudo bem.</li>
+            <li>você vive prometendo disciplina, mas perde horas em celular, vídeo curto e distração barata.</li>
+            <li>você já tentou mudar várias vezes e sempre voltou pro mesmo lugar.</li>
+            <li>você olha pra si mesmo e sabe que hoje ainda está abaixo do homem que poderia ser.</li>
+            <li>você quer respeito, mas ainda se sente fraco, perdido e sem firmeza.</li>
+            <li>você morre de medo de chegar aos 30 do mesmo jeito que está agora.</li>
+            <li>você sente falta de direção, de base e de um motivo real pra levantar da cama.</li>
+          </ul>
+        </div>
+        <div class="forwho-col forwho-col--no">
+          <p class="forwho-col__title">Não é pra você se...</p>
+          <ul class="forwho-list forwho-list--no">
+            <li>você quer só motivação passageira e frase bonita.</li>
+            <li>você ainda está procurando atalho em vez de mudança de verdade.</li>
+            <li>você prefere culpar rotina, família, dinheiro ou falta de tempo.</li>
+            <li>você não está disposto a olhar com honestidade pro homem que virou até aqui.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foundation -->
+  <section class="section-light">
+    <div class="wrap">
+      <div class="section-heading">
+        <h2 class="display section-title">Os pilares do protocolo.</h2>
+        <p class="section-sub foundation-note">O PFP trabalha os três pilares da Hard Mode ao mesmo tempo, porque não adianta ter força física e continuar perdido por dentro.</p>
+      </div>
+      <div class="foundation-grid">
+        <article class="foundation-card">
+          <div class="foundation-card__n">01</div>
+          <div class="foundation-card__title">Força Prática</div>
+          <p class="body-p">Corpo forte não é vaidade — é responsabilidade. A disciplina construída no treino aparece em cada outra área da sua vida.</p>
+        </article>
+        <article class="foundation-card">
+          <div class="foundation-card__n">02</div>
+          <div class="foundation-card__title">Trabalho</div>
+          <p class="body-p">Foco profundo e geração de valor real. O bloco que separa quem constrói legado de quem fica apenas ocupado.</p>
+        </article>
+        <article class="foundation-card">
+          <div class="foundation-card__n">03</div>
+          <div class="foundation-card__title">Vida Espiritual</div>
+          <p class="body-p">Sem dogma, sem abstração — é o norte que te mantém de pé quando tudo o mais cede.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lessons -->
+  <section class="section-soft-dark">
+    <div class="wrap">
+      <div class="section-heading">
+        <h2 class="display section-title">As 10 aulas do protocolo.</h2>
+        <p class="section-sub">O que você vai ver em cada aula e, principalmente, o que isso muda na prática na sua vida.</p>
+      </div>
+      <div class="lessons-grid">
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">⚰️</div><div class="lesson-card__n">Aula 01</div></div>
+          <h3 class="lesson-card__title">O Necrológio</h3>
+          <p class="lesson-card__learn">Você escreve a história que quer que contem no seu velório e cria um filtro claro para cada decisão importante da sua vida.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você para de viver no automático e começa a agir com direção, peso e consciência do homem que quer se tornar.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🧠</div><div class="lesson-card__n">Aula 02</div></div>
+          <h3 class="lesson-card__title">Engenharia de Comportamento</h3>
+          <p class="lesson-card__learn">Você aprende a identificar o que drena sua energia e a eliminar sabotadores por sistema, não por força de vontade.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você ganha clareza sobre seus gatilhos e deixa de repetir os mesmos erros toda semana.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🌙</div><div class="lesson-card__n">Aula 03</div></div>
+          <h3 class="lesson-card__title">Sono Estratégico</h3>
+          <p class="lesson-card__learn">Você entende a base fisiológica que determina a qualidade do dia seguinte e aprende a parar de sabotar sua própria energia.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Mais disposição, mais lucidez e mais capacidade de cumprir o que precisa ser feito.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">☀️</div><div class="lesson-card__n">Aula 04</div></div>
+          <h3 class="lesson-card__title">Manhã Blindada</h3>
+          <p class="lesson-card__learn">As primeiras horas do dia deixam de ser reativas e se tornam suas, com uma estrutura que reduz ansiedade e dispersão.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você começa o dia no comando, não sendo arrastado pelo celular, pela pressa e pelo improviso.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🎯</div><div class="lesson-card__n">Aula 05</div></div>
+          <h3 class="lesson-card__title">Trabalho Profundo</h3>
+          <p class="lesson-card__learn">Você aprende a proteger blocos reais de foco absoluto para produzir, estudar e construir algo que tenha valor de verdade.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Menos ocupação vazia, mais execução concreta e mais progresso visível na sua vida profissional.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🏋️</div><div class="lesson-card__n">Aula 06</div></div>
+          <h3 class="lesson-card__title">Força Prática</h3>
+          <p class="lesson-card__learn">A disciplina do treino deixa de ser algo solto e passa a funcionar como base de postura, energia e responsabilidade.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Seu corpo começa a acompanhar sua decisão. E isso transborda para confiança, presença e firmeza.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🛐</div><div class="lesson-card__n">Aula 07</div></div>
+          <h3 class="lesson-card__title">Vida Espiritual</h3>
+          <p class="lesson-card__learn">Você aprende a cultivar silêncio, direção e ordem interna para não viver refém de ruído, ansiedade e vazio existencial.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Mais paz, mais eixo e uma base espiritual capaz de sustentar o resto da construção.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🧱</div><div class="lesson-card__n">Aula 08</div></div>
+          <h3 class="lesson-card__title">Engenharia de Ambiente</h3>
+          <p class="lesson-card__learn">Você redesenha o ambiente para facilitar o comportamento certo e diminuir a fricção de tudo o que costuma te derrubar.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você para de depender só de força mental e cria um cenário que trabalha a seu favor todos os dias.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🛡️</div><div class="lesson-card__n">Aula 09</div></div>
+          <h3 class="lesson-card__title">Protocolo de Crise</h3>
+          <p class="lesson-card__learn">Quando o dia der errado, você sabe como reagir sem transformar uma falha isolada em semanas de queda e culpa.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você ganha resiliência prática e para de desmoronar toda vez que sai do plano.</div>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-card__top"><div class="lesson-card__badge">🤝</div><div class="lesson-card__n">Aula 10</div></div>
+          <h3 class="lesson-card__title">O Compromisso</h3>
+          <p class="lesson-card__learn">Você encerra o protocolo com um posicionamento claro e o início definitivo da construção do homem que decidiu ser.</p>
+          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você sai com uma decisão consolidada, não com mais um pico de empolgação que some em poucos dias.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonuses -->
+  <section class="section-light">
+    <div class="wrap">
+      <div class="section-heading">
+        <h2 class="display section-title">Bônus inclusos no protocolo.</h2>
+        <p class="section-sub">Os bônus entram pra facilitar a aplicação do Protocolo no dia a dia.</p>
+      </div>
+      <div class="bonus-grid">
+        <article class="bonus-card">
+          <div class="bonus-card__media"><img src="./assets/img/hma-guia-treino-em-casa-capa.png" alt="Guia de Treino em Casa"></div>
+          <div class="bonus-card__content">
+            <p class="bonus-card__lbl">Bônus 01</p>
+            <div class="bonus-card__title">Guia de Treino em Casa</div>
+            <p class="bonus-card__desc">Pra você sair da desculpa e manter o treino mesmo quando não dá pra ir pra academia.</p>
+            <p class="bonus-card__val">Valor: R$37</p>
+          </div>
+        </article>
+        <article class="bonus-card">
+          <div class="bonus-card__media"><img src="./assets/img/hma-diario-do-homem-de-base-capa.png" alt="Diário do Homem de Base"></div>
+          <div class="bonus-card__content">
+            <p class="bonus-card__lbl">Bônus 02</p>
+            <div class="bonus-card__title">Diário do Homem de Base</div>
+            <p class="bonus-card__desc">Pra organizar a cabeça, registrar o que importa e não deixar o protocolo virar só intenção.</p>
+            <p class="bonus-card__val">Valor: R$27</p>
+          </div>
+        </article>
+        <article class="bonus-card">
+          <div class="bonus-card__media"><img src="./assets/img/hma-biblioteca-hard-mode-capa.png" alt="Biblioteca Hard Mode"></div>
+          <div class="bonus-card__content">
+            <p class="bonus-card__lbl">Bônus 03</p>
+            <div class="bonus-card__title">Biblioteca Hard Mode</div>
+            <p class="bonus-card__desc">Pra estudar com direção e alimentar a mente com coisa que realmente fortalece você.</p>
+            <p class="bonus-card__val">Valor: R$17</p>
+          </div>
+        </article>
+        <article class="bonus-card">
+          <div class="bonus-card__media"><img src="./assets/img/hma-checklist-auditoria-semanal-capa.png" alt="Checklist de Auditoria Semanal"></div>
+          <div class="bonus-card__content">
+            <p class="bonus-card__lbl">Bônus 04</p>
+            <div class="bonus-card__title">Checklist de Auditoria Semanal</div>
+            <p class="bonus-card__desc">Pra revisar a semana, corrigir a rota rápido e não deixar a bagunça acumular.</p>
+            <p class="bonus-card__val">Valor: R$17</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section-soft-dark">
+    <div class="wrap">
+      <div class="story-layout">
+        <div>
+          <h2 class="display section-title">Eu vivi isso na prática.</h2>
+          <p class="body-p" style="margin-top:24px;">Por anos, usei meu próprio conhecimento como escudo. Lia os livros, fazia as listas, entendia os conceitos. Como se conhecer fosse o mesmo que viver.</p>
+          <p class="body-p">Até que eu tive que admitir uma coisa: o problema nunca foi falta de informação. Faltava uma identidade sólida o suficiente para continuar quando a motivação acabasse.</p>
+          <p class="body-p">O Protocolo de Força Prática nasceu dessa virada.</p>
+        </div>
+        <div>
+          <div class="story-quote">
+            <p>"A disciplina não é um fardo — é o pedágio para o seu chamado. Parei de tentar me organizar e comecei a construir quem eu queria ser."</p>
+            <span class="attr">LEONARDO MONTANHOLI,<br>CRIADOR DA HARD MODE LIFESTYLE.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer -->
+  <section class="section-light" id="oferta">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:32px">
+        <p class="eyebrow eyebrow--lg">Sua decisão</p>
+        <div class="divider" style="margin:14px auto 0"></div>
+      </div>
+      <div class="offer-wrap">
+        <div class="offer-card">
+          <div class="offer-card__logo"><img src="./assets/img/protocolo-logo.png" alt="Protocolo de Força Prática"></div>
+          <p class="offer-card__includes">10 aulas + 4 bônus · Acesso imediato</p>
+          <ul class="offer-stack">
+            <li><span>Protocolo de Força Prática (10 aulas)</span><span>R$147</span></li>
+            <li><span>Guia de Treino em Casa</span><span>R$37</span></li>
+            <li><span>Diário do Homem de Base</span><span>R$27</span></li>
+            <li><span>Biblioteca Hard Mode</span><span>R$17</span></li>
+            <li><span>Checklist de Auditoria Semanal</span><span>R$17</span></li>
+            <li class="offer-stack__total"><span>Total</span><span>R$245</span></li>
+          </ul>
+          <div class="offer-price-block">
+            <p class="price-anchor price-anchor--offer">DE <span>R$245</span> POR</p>
+            <p class="offer-installments offer-installments--inline">9x de <strong>R$8,80</strong></p>
+            <p class="offer-cash offer-cash--inline"><span class="offer-or-inline">ou</span> <strong>R$67</strong> <span class="offer-cash-suffix">à vista</span></p>
+          </div>
+          <div class="offer-cta">
+            <a href="https://pay.hotmart.com/Y103675280S?checkoutMode=10" class="btn btn--primary" id="btn-checkout">
+              Quero Começar Agora
+            </a>
+            <div class="offer-badges">
+              <span class="offer-badge">100% Online</span>
+              <span class="offer-badge">Acesso Imediato</span>
+            </div>
+          </div>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee__icon">🛡</div>
+          <div>
+            <div class="guarantee__title">Garantia de 7 dias</div>
+            <p class="guarantee__text">Acessa o Protocolo. Aplica as primeiras aulas. Se em 7 dias você não sentir que essa é a base que estava faltando, <strong>devolvo 100% do seu dinheiro.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="close section-dark">
+    <div class="wrap wrap--narrow">
+      <h2 class="display close__hl">
+        <span class="close-line">NO DIA DO SEU VELÓRIO</span>
+        <span class="close-line">NINGUÉM VAI LEMBRAR</span>
+        <span class="close-line">DO QUE VOCÊ <em>TENTOU</em> SER.</span>
+      </h2>
+      <p class="close__sub">
+        Vão lembrar do homem que você foi<br>para as pessoas que dependiam de você.<br>
+        A construção começa com uma decisão —<br>
+        <span>e essa decisão é agora.</span>
+      </p>
+      <div class="close__cta">
+        <a href="https://pay.hotmart.com/Y103675280S?checkoutMode=10" class="btn btn--ghost">QUERO O PROTOCOLO POR R$67</a>
+      </div>
+      <p class="close__final">Não deixe para amanhã o homem<br>que você precisa ser hoje.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="wrap wrap--narrow">
+      <div class="section-heading">
+        <h2 class="display section-title">Dúvidas frequentes</h2>
+      </div>
+      <div style="margin-top:30px">
+        <div class="faq-item">
+          <div class="faq-q">Por quanto tempo tenho acesso? <span>+</span></div>
+          <p class="faq-a">Acesso por 1 ano. Você paga uma vez e tem acesso por 1 ano a todas as atualizações que fizermos no Protocolo durante o período.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Precisa de experiência prévia? <span>+</span></div>
+          <p class="faq-a">Não. O Protocolo foi construído para quem está começando de verdade.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Em quanto tempo vejo resultado? <span>+</span></div>
+          <p class="faq-a"><strong>A primeira clareza vem na Aula 1.</strong> A fundação começa a se formar nas primeiras duas semanas.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Isso é um curso de produtividade? <span>+</span></div>
+          <p class="faq-a">Não. É um protocolo de construção de identidade. Produtividade é consequência.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">E se eu não gostar? <span>+</span></div>
+          <p class="faq-a"><strong>7 dias de garantia incondicional.</strong> Você acessa, aplica e decide com a experiência. Devolvo 100%.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Já tentei muita coisa. Por que seria diferente? <span>+</span></div>
+          <p class="faq-a">O problema nunca foi o método. Foi a fundação. <strong>O Protocolo começa pelo alicerce.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Hard Mode Inc. · <a href="#">Privacidade</a> · <a href="#">Termos</a> · <a href="#">Suporte</a></p>
+    <p style="margin-top:4px">Resultados individuais podem variar.</p>
+  </footer>
+
+</div><!-- /sales-section -->
+
+
+<script>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   QUIZ LOGIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+const TOTAL_QUESTIONS = 6;
+const screens = ['intro','q1','q2','q3','q4','q5','q6','loading','diagnosis'];
+let currentScreen = 'intro';
+
+function showScreen(id) {
+  // hide all
+  screens.forEach(s => {
+    const el = document.getElementById('screen-' + s);
+    if (el) { el.classList.remove('active'); }
+  });
+  // show target
+  const target = document.getElementById('screen-' + id);
+  if (target) { target.classList.add('active'); }
+  currentScreen = id;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Show/hide progress bar
+  const progWrap = document.getElementById('prog-wrap');
+  const questionScreens = ['q1','q2','q3','q4','q5','q6'];
+  if (questionScreens.includes(id)) {
+    progWrap.style.display = 'block';
+    const qNum = parseInt(id.replace('q',''));
+    updateProgress(qNum);
+  } else {
+    progWrap.style.display = 'none';
+  }
+}
+
+function updateProgress(qNum) {
+  const pct = ((qNum - 1) / TOTAL_QUESTIONS) * 100;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-count').textContent = 'Pergunta ' + qNum + ' de ' + TOTAL_QUESTIONS;
+}
+
+function startQuiz() {
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+  showScreen('q1');
+}
+
+function selectOpt(btn, questionId) {
+  // Deselect siblings
+  const opts = document.querySelectorAll('#opts-' + questionId + ' .q-opt');
+  opts.forEach(o => o.classList.remove('selected'));
+  // Select this
+  btn.classList.add('selected');
+  // Enable next button
+  const nextBtn = document.getElementById('btn-' + questionId);
+  if (nextBtn) nextBtn.disabled = false;
+}
+
+function nextStep(nextId) {
+  showScreen(nextId);
+}
+
+function goToLoading() {
+  showScreen('loading');
+  // Restart the bar animation
+  const bar = document.getElementById('load-bar');
+  bar.style.animation = 'none';
+  bar.offsetHeight; // reflow
+  bar.style.animation = 'load-bar 2.8s ease forwards';
+
+  // Show loading items with delays
+  const items = ['li1','li2','li3','li4'];
+  const delays = [400, 900, 1600, 2200];
+  items.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('show');
+    setTimeout(() => {
+      if (el) el.classList.add('show');
+    }, delays[i]);
+  });
+
+  // Go to diagnosis after 3.2s
+  setTimeout(() => {
+    showScreen('diagnosis');
+  }, 3200);
+}
+
+function showSalesPage() {
+  if (typeof fbq !== 'undefined') fbq('track', 'ViewContent');
+  document.getElementById('quiz-section').style.display = 'none';
+  document.getElementById('sales-section').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+// Pixel on checkout click
+document.addEventListener('DOMContentLoaded', () => {
+  const btns = document.querySelectorAll('#btn-checkout, #btn-hero-checkout');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
