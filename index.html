@@ -1459,7 +1459,135 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+(function(){
+  const track = document.querySelector('.testimonials-track');
+  if(!track) return;
 
+  let scrollEndTimer = null;
+  let isAdjusting = false;
+
+  function getOriginals() {
+    return Array.from(track.children).filter(el => !el.dataset.clone);
+  }
+
+  function cleanupClones() {
+    track.querySelectorAll('[data-clone="true"]').forEach(el => el.remove());
+    track.dataset.loopReady = 'false';
+    delete track.dataset.loopWidth;
+    delete track.dataset.cardWidth;
+  }
+
+  function setupInfiniteTestimonials(){
+    if (window.innerWidth >= 640) {
+      cleanupClones();
+      return;
+    }
+
+    if (track.dataset.loopReady === 'true') return;
+
+    const originals = getOriginals();
+    if (!originals.length) return;
+
+    cleanupClones();
+
+    const fragStart = document.createDocumentFragment();
+    const fragEnd = document.createDocumentFragment();
+
+    originals.forEach(card => {
+      const before = card.cloneNode(true);
+      before.dataset.clone = 'true';
+      fragStart.appendChild(before);
+
+      const after = card.cloneNode(true);
+      after.dataset.clone = 'true';
+      fragEnd.appendChild(after);
+    });
+
+    track.insertBefore(fragStart, track.firstChild);
+    track.appendChild(fragEnd);
+
+    requestAnimationFrame(() => {
+      const firstOriginal = getOriginals()[0];
+      if (!firstOriginal) return;
+
+      const style = getComputedStyle(track);
+      const gap = parseFloat(style.columnGap || style.gap || 12);
+      const cardWidth = firstOriginal.getBoundingClientRect().width + gap;
+      const loopWidth = originals.length * cardWidth;
+
+      track.dataset.cardWidth = String(cardWidth);
+      track.dataset.loopWidth = String(loopWidth);
+      track.dataset.loopReady = 'true';
+
+      // começa no bloco central
+      track.scrollLeft = loopWidth;
+    });
+  }
+
+  function adjustIfNeeded() {
+    if (window.innerWidth >= 640) return;
+    if (track.dataset.loopReady !== 'true') return;
+    if (isAdjusting) return;
+
+    const loopWidth = parseFloat(track.dataset.loopWidth || '0');
+    const cardWidth = parseFloat(track.dataset.cardWidth || '0');
+    if (!loopWidth || !cardWidth) return;
+
+    const left = track.scrollLeft;
+    const viewport = track.clientWidth;
+
+    // só reposiciona quando realmente chega perto das bordas
+    const leftEdge = cardWidth * 0.5;
+    const rightEdge = (loopWidth * 2) - viewport - (cardWidth * 0.5);
+
+    let target = null;
+
+    if (left <= leftEdge) {
+      target = left + loopWidth;
+    } else if (left >= rightEdge) {
+      target = left - loopWidth;
+    }
+
+    if (target === null) return;
+
+    isAdjusting = true;
+
+    const prevSnap = track.style.scrollSnapType;
+    const prevBehavior = track.style.scrollBehavior;
+
+    track.style.scrollSnapType = 'none';
+    track.style.scrollBehavior = 'auto';
+    track.scrollLeft = target;
+
+    requestAnimationFrame(() => {
+      track.style.scrollSnapType = prevSnap || '';
+      track.style.scrollBehavior = prevBehavior || '';
+      isAdjusting = false;
+    });
+  }
+
+  track.addEventListener('scroll', () => {
+    if (window.innerWidth >= 640) return;
+    if (track.dataset.loopReady !== 'true') return;
+    if (isAdjusting) return;
+
+    clearTimeout(scrollEndTimer);
+    scrollEndTimer = setTimeout(adjustIfNeeded, 90);
+  }, { passive: true });
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      cleanupClones();
+      setupInfiniteTestimonials();
+    }, 120);
+  });
+
+  window.addEventListener('load', setupInfiniteTestimonials);
+})();
+</script>
 
 </body>
 </html>
