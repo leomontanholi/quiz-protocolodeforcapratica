@@ -1474,6 +1474,7 @@ document.addEventListener('DOMContentLoaded', () => {
     track.querySelectorAll('[data-clone="true"]').forEach(el => el.remove());
     track.dataset.loopReady = 'false';
     delete track.dataset.loopWidth;
+    delete track.dataset.cardWidth;
   }
 
   function setupInfiniteTestimonials(){
@@ -1508,10 +1509,13 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
       const firstOriginal = getOriginals()[0];
       if (!firstOriginal) return;
+
       const style = getComputedStyle(track);
       const gap = parseFloat(style.columnGap || style.gap || 12);
       const cardWidth = firstOriginal.getBoundingClientRect().width + gap;
       const loopWidth = originals.length * cardWidth;
+
+      track.dataset.cardWidth = String(cardWidth);
       track.dataset.loopWidth = String(loopWidth);
       track.dataset.loopReady = 'true';
       track.scrollLeft = loopWidth;
@@ -1524,16 +1528,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (looping) return;
 
     const loopWidth = parseFloat(track.dataset.loopWidth || '0');
-    if (!loopWidth) return;
+    const cardWidth = parseFloat(track.dataset.cardWidth || '0');
+    if (!loopWidth || !cardWidth) return;
 
     const left = track.scrollLeft;
-    const threshold = loopWidth * 0.35;
+    const viewport = track.clientWidth;
+    const leftLimit = cardWidth * 0.6;
+    const rightLimit = (loopWidth * 2) - viewport - (cardWidth * 0.6);
 
-    if (left < threshold) {
+    if (left <= leftLimit) {
       looping = true;
       track.scrollLeft = left + loopWidth;
       requestAnimationFrame(() => { looping = false; });
-    } else if (left > loopWidth * 1.65) {
+    } else if (left >= rightLimit) {
       looping = true;
       track.scrollLeft = left - loopWidth;
       requestAnimationFrame(() => { looping = false; });
