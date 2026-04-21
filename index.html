@@ -97,6 +97,10 @@ a,button{-webkit-tap-highlight-color:transparent}
 .q-screen.active{display:flex}
 
 .q-content{width:100%;max-width:560px}
+#screen-intro .q-content{display:flex;flex-direction:column;align-items:center;text-align:center}
+#screen-intro .q-intro-chips{justify-content:center}
+#screen-intro .q-intro-sub{margin-left:auto;margin-right:auto}
+
 
 /* Fade-in animation */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
@@ -645,23 +649,23 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="q-screen" id="screen-q1">
     <div class="q-content">
       <div class="q-num">Pergunta 1 de 6</div>
-      <h2 class="q-text">Hoje, o que mais incomoda você quando olha pra própria vida?</h2>
+      <h2 class="q-text">Você já tentou mudar antes — e voltou pro mesmo lugar?</h2>
       <div class="q-options" id="opts-q1">
         <button class="q-opt" onclick="selectOpt(this,'q1')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Saber que eu podia estar muito melhor, mas continuo patinando.
+          Sim, várias vezes. Começo bem e paro em pouco tempo.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q1')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Me sentir sem direção, como se minha vida não estivesse indo pra lugar nenhum.
+          Sim, tentei. Mas nunca durou nem um mês de verdade.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q1')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Ver que eu quero mudar, mas sempre acabo voltando pros mesmos erros.
+          Ainda não tentei de verdade. Fico adiando há um tempo.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q1')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Sentir que estou abaixo do homem que eu sei que poderia ser.
+          Já tentei de tudo. Não sei mais o que funciona pra mim.
         </button>
       </div>
       <button class="q-btn" id="btn-q1" disabled onclick="nextStep('q2')">Próxima pergunta →</button>
@@ -672,23 +676,23 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="q-screen" id="screen-q2">
     <div class="q-content">
       <div class="q-num">Pergunta 2 de 6</div>
-      <h2 class="q-text">O que mais tem sabotado sua evolução hoje?</h2>
+      <h2 class="q-text">O que mais te derruba quando você tenta se organizar?</h2>
       <div class="q-options" id="opts-q2">
         <button class="q-opt" onclick="selectOpt(this,'q2')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Celular, rede social, vídeo curto e distração o tempo todo.
+          O celular e as distrações. Perco horas sem perceber.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q2')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Eu até animo, mas desisto rápido quando o resultado não vem.
+          Falta de clareza. Não sei o que realmente importa fazer.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q2')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Falta um plano claro. Eu tento várias coisas, mas tudo fica solto.
+          Qualquer coisa fora do plano já me joga fora da rotina.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q2')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Tenho medo de errar, ser julgado e passar vergonha.
+          Falta de energia e disposição. Mal consigo fazer o básico.
         </button>
       </div>
       <button class="q-btn" id="btn-q2" disabled onclick="nextStep('q3')">Próxima pergunta →</button>
@@ -699,23 +703,23 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="q-screen" id="screen-q3">
     <div class="q-content">
       <div class="q-num">Pergunta 3 de 6</div>
-      <h2 class="q-text">Qual dessas situações mais mexe com você no fundo?</h2>
+      <h2 class="q-text">Como você se sente na maioria das noites quando para pra pensar?</h2>
       <div class="q-options" id="opts-q3">
         <button class="q-opt" onclick="selectOpt(this,'q3')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Ser tratado como moleque e sentir que ninguém me leva a sério.
+          Que o dia passou e eu não construí nada que valha.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q3')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Me sentir fraco, sem energia e sem presença perto de outros homens.
+          Que estou no piloto automático, sem direção real nenhuma.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q3')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Não conseguir bancar minha vida do jeito que eu gostaria.
+          Ansioso. Sei que deveria estar mais avançado do que estou.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q3')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Sentir que minha vida está vazia e sem propósito de verdade.
+          Vazio. Tem uma sensação que falta algo que não consigo nomear.
         </button>
       </div>
       <button class="q-btn" id="btn-q3" disabled onclick="nextStep('q4')">Próxima pergunta →</button>
@@ -726,23 +730,23 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="q-screen" id="screen-q4">
     <div class="q-content">
       <div class="q-num">Pergunta 4 de 6</div>
-      <h2 class="q-text">Se você conseguisse se colocar nos trilhos de verdade, o que mais gostaria de conquistar?</h2>
+      <h2 class="q-text">Com qual dessas situações você mais se identifica hoje?</h2>
       <div class="q-options" id="opts-q4">
         <button class="q-opt" onclick="selectOpt(this,'q4')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Virar um homem mais forte, firme e respeitado.
+          Sei o que preciso fazer, mas não consigo manter o que começo.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q4')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Ter uma rotina disciplinada e produtiva sem depender de motivação.
+          Não sei direito pra onde minha vida está indo.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q4')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Ganhar melhor e construir independência financeira de verdade.
+          Me sinto perdido no trabalho, nos projetos e no que construir.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q4')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Ter direção, propósito e virar alguém com quem os outros podem contar.
+          Tenho vontade de mudar, mas não sei por onde começar de verdade.
         </button>
       </div>
       <button class="q-btn" id="btn-q4" disabled onclick="nextStep('q5')">Próxima pergunta →</button>
@@ -753,23 +757,23 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="q-screen" id="screen-q5">
     <div class="q-content">
       <div class="q-num">Pergunta 5 de 6</div>
-      <h2 class="q-text">O que você já tentou para sair disso, mas no fim não resolveu?</h2>
+      <h2 class="q-text">O que você mais quer resolver nos próximos 90 dias?</h2>
       <div class="q-options" id="opts-q5">
         <button class="q-opt" onclick="selectOpt(this,'q5')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Vídeo, livro e conteúdo motivacional que anima na hora, mas passa.
+          Ter uma rotina real que eu consiga manter sem depender de motivação.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q5')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Tentar criar hábitos sozinho, sem método, e largar no meio.
+          Ter mais foco e produzir mais no trabalho ou nos projetos pessoais.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q5')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Comprar curso e não terminar, porque nada encaixa de verdade.
+          Cuidar melhor do corpo — treino, energia e disposição.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q5')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Pular de uma solução pra outra achando que a próxima vai salvar.
+          Me sentir com mais propósito, direção e clareza de pra onde vou.
         </button>
       </div>
       <button class="q-btn" id="btn-q5" disabled onclick="nextStep('q6')">Próxima pergunta →</button>
@@ -780,23 +784,23 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="q-screen" id="screen-q6">
     <div class="q-content">
       <div class="q-num">Pergunta 6 de 6</div>
-      <h2 class="q-text">O que faria mais sentido pra você agora?</h2>
+      <h2 class="q-text">Há quanto tempo você sente que está travado nessa situação?</h2>
       <div class="q-options" id="opts-q6">
         <button class="q-opt" onclick="selectOpt(this,'q6')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Um método claro pra parar de viver no impulso e começar a ter estrutura.
+          Menos de 6 meses. É coisa bem recente.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q6')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Um caminho prático pra fortalecer corpo, rotina e postura ao mesmo tempo.
+          Entre 6 meses e 1 ano.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q6')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Uma direção mais firme pra sair da estagnação e virar um homem respeitável.
+          Entre 1 e 3 anos.
         </button>
         <button class="q-opt" onclick="selectOpt(this,'q6')">
           <span class="q-check"><span class="q-check-mark"></span></span>
-          Uma base real pra construir disciplina, trabalho e propósito sem se perder de novo.
+          Mais de 3 anos. Já virou um padrão na minha vida.
         </button>
       </div>
       <button class="q-btn" id="btn-q6" disabled onclick="goToLoading()">Ver meu resultado →</button>
@@ -847,7 +851,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 
         <div class="diag-block diag-block--action">
           <div class="diag-block__lbl">O que precisa ser feito agora</div>
-          <div class="diag-block__title">Construir os três pilares que sustentam tudo</div>
+          <div class="diag-block__title">Construir os 3 pilares que sustentam tudo</div>
           <p class="diag-block__text">
             O próximo passo não é mais uma técnica de produtividade nem mais uma tentativa de força de vontade. É construir os três pilares que o mercado de desenvolvimento pessoal nunca te entregou ao mesmo tempo: a presença física que gera confiança, o trabalho com direção que gera legado, e a vida interior que te mantém de pé nos dias em que tudo cede. <strong>O Protocolo de Força Prática foi criado exatamente pra isso.</strong> São 10 aulas que constroem essa base do zero — sem precisar de motivação pra sustentar. Quem passa por ele para de perguntar "por que eu não consigo?" e começa a agir a partir de quem decidiu ser.
           </p>
@@ -858,7 +862,7 @@ a,button{-webkit-tap-highlight-color:transparent}
       <!-- VSL -->
       <p class="diag-vsl-label">Assista antes de continuar</p>
       <div class="diag-vsl-wrap">
-        <iframe
+        <iframe id="diag-vsl-player" 
           src="https://player.mediadelivery.net/play/636159/7207a3bc-40a9-42f3-86de-cddacef400b7"
           title="Protocolo de Força Prática"
           referrerpolicy="strict-origin-when-cross-origin"
@@ -867,10 +871,10 @@ a,button{-webkit-tap-highlight-color:transparent}
         </iframe>
       </div>
 
-      <button class="q-btn" onclick="showSalesPage()">
+      <button class="q-btn" onclick="stopDiagnosisVideo(); showSalesPage()">
         QUERO CONHECER O PROTOCOLO →
       </button>
-      <p class="diag-cta-note">Acesso imediato · Garantia de 7 dias</p>
+
 
     </div>
   </div>
@@ -883,17 +887,19 @@ a,button{-webkit-tap-highlight-color:transparent}
 ██████████████████████████████████████████ -->
 <div id="sales-section">
 
-  <!-- Slim header with logo only -->
+
   <header class="sales-header">
     <img class="sales-logo" src="./assets/img/logo-hard-mode.png" alt="Hard Mode Lifestyle">
   </header>
 
-  <!-- Testimonials -->
-  <section class="section-light">
-    <div class="wrap">
-      <div class="section-heading">
-        <h2 class="display section-title">Resultados reais.</h2>
-      </div>
+<section class="section-light">
+  <div class="wrap">
+    <div class="section-heading">
+      <h2 class="display section-title">Resultados reais</h2>
+      <p class="section-sub">Veja os depoimentos de alguns dos nossos alunos.</p>
+    </div>
+
+    <div class="testimonials-shell">
       <div class="testimonials-track">
         <article class="testimonial">
           <div class="testimonial__head">
@@ -904,8 +910,9 @@ a,button{-webkit-tap-highlight-color:transparent}
             </div>
           </div>
           <span class="testimonial__pill">Mais constância</span>
-          <p class="testimonial__text">"Eu sempre começava a semana animado e largava tudo no meio. O protocolo me ajudou a parar de viver no improviso. Hoje minha rotina é simples, mas eu cumpro."</p>
+          <p class="testimonial__text">“Eu sempre começava a semana animado e largava tudo no meio. O protocolo me ajudou a parar de viver no improviso. Hoje minha rotina é simples, mas eu cumpro.”</p>
         </article>
+
         <article class="testimonial">
           <div class="testimonial__head">
             <img class="testimonial__photo" src="./assets/img/testimonial-julio.png" alt="Júlio César">
@@ -915,8 +922,9 @@ a,button{-webkit-tap-highlight-color:transparent}
             </div>
           </div>
           <span class="testimonial__pill">Mais clareza</span>
-          <p class="testimonial__text">"A aula do Necrológio me pegou de verdade. Eu percebi que estava só empurrando a vida com a barriga. Depois disso, cortei as distrações e comecei a fazer tudo com mais direção."</p>
+          <p class="testimonial__text">“A aula do Necrológio me pegou de verdade. Eu percebi que estava só empurrando a vida com a barriga. Depois disso, cortei as distrações e comecei a fazer tudo com mais direção.”</p>
         </article>
+
         <article class="testimonial">
           <div class="testimonial__head">
             <img class="testimonial__photo" src="./assets/img/testimonial-rodrigo.png" alt="Rodrigo M.">
@@ -926,8 +934,9 @@ a,button{-webkit-tap-highlight-color:transparent}
             </div>
           </div>
           <span class="testimonial__pill">Mais respeito próprio</span>
-          <p class="testimonial__text">"Não foi só produtividade. Eu voltei a treinar, melhorei meu sono e parei de me prometer coisa que eu não fazia. Isso mudou minha cabeça."</p>
+          <p class="testimonial__text">“Não foi só produtividade. Eu voltei a treinar, melhorei meu sono e parei de me prometer coisa que eu não fazia. Isso mudou minha cabeça.”</p>
         </article>
+
         <article class="testimonial">
           <div class="testimonial__head">
             <img class="testimonial__photo" src="./assets/img/testimonial-daniel.png" alt="Daniel L.">
@@ -937,316 +946,404 @@ a,button{-webkit-tap-highlight-color:transparent}
             </div>
           </div>
           <span class="testimonial__pill">Mais estrutura</span>
-          <p class="testimonial__text">"Eu já tinha comprado curso e largado vários. Nesse aqui eu consegui aplicar. Não é um monte de fala bonita. É direto e te coloca pra agir."</p>
+          <p class="testimonial__text">“Eu já tinha comprado curso e largado vários. Nesse aqui eu consegui aplicar. Não é um monte de fala bonita. É direto e te coloca pra agir.”</p>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- For who -->
-  <section class="section-soft-dark">
-    <div class="wrap">
-      <div class="section-heading">
-        <h2 class="display section-title">Pra quem é</h2>
-        <p class="section-sub">Se você sabe que está ficando para trás e não quer continuar se enganando, é pra você.</p>
-      </div>
-      <div class="forwho-grid">
-        <div class="forwho-col forwho-col--yes">
-          <p class="forwho-col__title">É pra você se...</p>
-          <ul class="forwho-list forwho-list--yes">
-            <li>você sente que sua vida não anda e já cansou de fingir que está tudo bem.</li>
-            <li>você vive prometendo disciplina, mas perde horas em celular, vídeo curto e distração barata.</li>
-            <li>você já tentou mudar várias vezes e sempre voltou pro mesmo lugar.</li>
-            <li>você olha pra si mesmo e sabe que hoje ainda está abaixo do homem que poderia ser.</li>
-            <li>você quer respeito, mas ainda se sente fraco, perdido e sem firmeza.</li>
-            <li>você morre de medo de chegar aos 30 do mesmo jeito que está agora.</li>
-            <li>você sente falta de direção, de base e de um motivo real pra levantar da cama.</li>
-          </ul>
-        </div>
-        <div class="forwho-col forwho-col--no">
-          <p class="forwho-col__title">Não é pra você se...</p>
-          <ul class="forwho-list forwho-list--no">
-            <li>você quer só motivação passageira e frase bonita.</li>
-            <li>você ainda está procurando atalho em vez de mudança de verdade.</li>
-            <li>você prefere culpar rotina, família, dinheiro ou falta de tempo.</li>
-            <li>você não está disposto a olhar com honestidade pro homem que virou até aqui.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Foundation -->
-  <section class="section-light">
-    <div class="wrap">
-      <div class="section-heading">
-        <h2 class="display section-title">Os pilares do protocolo.</h2>
-        <p class="section-sub foundation-note">O PFP trabalha os três pilares da Hard Mode ao mesmo tempo, porque não adianta ter força física e continuar perdido por dentro.</p>
-      </div>
-      <div class="foundation-grid">
-        <article class="foundation-card">
-          <div class="foundation-card__n">01</div>
-          <div class="foundation-card__title">Força Prática</div>
-          <p class="body-p">Corpo forte não é vaidade — é responsabilidade. A disciplina construída no treino aparece em cada outra área da sua vida.</p>
-        </article>
-        <article class="foundation-card">
-          <div class="foundation-card__n">02</div>
-          <div class="foundation-card__title">Trabalho</div>
-          <p class="body-p">Foco profundo e geração de valor real. O bloco que separa quem constrói legado de quem fica apenas ocupado.</p>
-        </article>
-        <article class="foundation-card">
-          <div class="foundation-card__n">03</div>
-          <div class="foundation-card__title">Vida Espiritual</div>
-          <p class="body-p">Sem dogma, sem abstração — é o norte que te mantém de pé quando tudo o mais cede.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lessons -->
-  <section class="section-soft-dark">
-    <div class="wrap">
-      <div class="section-heading">
-        <h2 class="display section-title">As 10 aulas do protocolo.</h2>
-        <p class="section-sub">O que você vai ver em cada aula e, principalmente, o que isso muda na prática na sua vida.</p>
-      </div>
-      <div class="lessons-grid">
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">⚰️</div><div class="lesson-card__n">Aula 01</div></div>
-          <h3 class="lesson-card__title">O Necrológio</h3>
-          <p class="lesson-card__learn">Você escreve a história que quer que contem no seu velório e cria um filtro claro para cada decisão importante da sua vida.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você para de viver no automático e começa a agir com direção, peso e consciência do homem que quer se tornar.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🧠</div><div class="lesson-card__n">Aula 02</div></div>
-          <h3 class="lesson-card__title">Engenharia de Comportamento</h3>
-          <p class="lesson-card__learn">Você aprende a identificar o que drena sua energia e a eliminar sabotadores por sistema, não por força de vontade.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você ganha clareza sobre seus gatilhos e deixa de repetir os mesmos erros toda semana.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🌙</div><div class="lesson-card__n">Aula 03</div></div>
-          <h3 class="lesson-card__title">Sono Estratégico</h3>
-          <p class="lesson-card__learn">Você entende a base fisiológica que determina a qualidade do dia seguinte e aprende a parar de sabotar sua própria energia.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Mais disposição, mais lucidez e mais capacidade de cumprir o que precisa ser feito.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">☀️</div><div class="lesson-card__n">Aula 04</div></div>
-          <h3 class="lesson-card__title">Manhã Blindada</h3>
-          <p class="lesson-card__learn">As primeiras horas do dia deixam de ser reativas e se tornam suas, com uma estrutura que reduz ansiedade e dispersão.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você começa o dia no comando, não sendo arrastado pelo celular, pela pressa e pelo improviso.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🎯</div><div class="lesson-card__n">Aula 05</div></div>
-          <h3 class="lesson-card__title">Trabalho Profundo</h3>
-          <p class="lesson-card__learn">Você aprende a proteger blocos reais de foco absoluto para produzir, estudar e construir algo que tenha valor de verdade.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Menos ocupação vazia, mais execução concreta e mais progresso visível na sua vida profissional.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🏋️</div><div class="lesson-card__n">Aula 06</div></div>
-          <h3 class="lesson-card__title">Força Prática</h3>
-          <p class="lesson-card__learn">A disciplina do treino deixa de ser algo solto e passa a funcionar como base de postura, energia e responsabilidade.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Seu corpo começa a acompanhar sua decisão. E isso transborda para confiança, presença e firmeza.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🛐</div><div class="lesson-card__n">Aula 07</div></div>
-          <h3 class="lesson-card__title">Vida Espiritual</h3>
-          <p class="lesson-card__learn">Você aprende a cultivar silêncio, direção e ordem interna para não viver refém de ruído, ansiedade e vazio existencial.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Mais paz, mais eixo e uma base espiritual capaz de sustentar o resto da construção.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🧱</div><div class="lesson-card__n">Aula 08</div></div>
-          <h3 class="lesson-card__title">Engenharia de Ambiente</h3>
-          <p class="lesson-card__learn">Você redesenha o ambiente para facilitar o comportamento certo e diminuir a fricção de tudo o que costuma te derrubar.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você para de depender só de força mental e cria um cenário que trabalha a seu favor todos os dias.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🛡️</div><div class="lesson-card__n">Aula 09</div></div>
-          <h3 class="lesson-card__title">Protocolo de Crise</h3>
-          <p class="lesson-card__learn">Quando o dia der errado, você sabe como reagir sem transformar uma falha isolada em semanas de queda e culpa.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você ganha resiliência prática e para de desmoronar toda vez que sai do plano.</div>
-        </article>
-        <article class="lesson-card">
-          <div class="lesson-card__top"><div class="lesson-card__badge">🤝</div><div class="lesson-card__n">Aula 10</div></div>
-          <h3 class="lesson-card__title">O Compromisso</h3>
-          <p class="lesson-card__learn">Você encerra o protocolo com um posicionamento claro e o início definitivo da construção do homem que decidiu ser.</p>
-          <div class="lesson-card__shift"><strong>O que muda em você</strong>Você sai com uma decisão consolidada, não com mais um pico de empolgação que some em poucos dias.</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bonuses -->
-  <section class="section-light">
-    <div class="wrap">
-      <div class="section-heading">
-        <h2 class="display section-title">Bônus inclusos no protocolo.</h2>
-        <p class="section-sub">Os bônus entram pra facilitar a aplicação do Protocolo no dia a dia.</p>
-      </div>
-      <div class="bonus-grid">
-        <article class="bonus-card">
-          <div class="bonus-card__media"><img src="./assets/img/hma-guia-treino-em-casa-capa.png" alt="Guia de Treino em Casa"></div>
-          <div class="bonus-card__content">
-            <p class="bonus-card__lbl">Bônus 01</p>
-            <div class="bonus-card__title">Guia de Treino em Casa</div>
-            <p class="bonus-card__desc">Pra você sair da desculpa e manter o treino mesmo quando não dá pra ir pra academia.</p>
-            <p class="bonus-card__val">Valor: R$37</p>
-          </div>
-        </article>
-        <article class="bonus-card">
-          <div class="bonus-card__media"><img src="./assets/img/hma-diario-do-homem-de-base-capa.png" alt="Diário do Homem de Base"></div>
-          <div class="bonus-card__content">
-            <p class="bonus-card__lbl">Bônus 02</p>
-            <div class="bonus-card__title">Diário do Homem de Base</div>
-            <p class="bonus-card__desc">Pra organizar a cabeça, registrar o que importa e não deixar o protocolo virar só intenção.</p>
-            <p class="bonus-card__val">Valor: R$27</p>
-          </div>
-        </article>
-        <article class="bonus-card">
-          <div class="bonus-card__media"><img src="./assets/img/hma-biblioteca-hard-mode-capa.png" alt="Biblioteca Hard Mode"></div>
-          <div class="bonus-card__content">
-            <p class="bonus-card__lbl">Bônus 03</p>
-            <div class="bonus-card__title">Biblioteca Hard Mode</div>
-            <p class="bonus-card__desc">Pra estudar com direção e alimentar a mente com coisa que realmente fortalece você.</p>
-            <p class="bonus-card__val">Valor: R$17</p>
-          </div>
-        </article>
-        <article class="bonus-card">
-          <div class="bonus-card__media"><img src="./assets/img/hma-checklist-auditoria-semanal-capa.png" alt="Checklist de Auditoria Semanal"></div>
-          <div class="bonus-card__content">
-            <p class="bonus-card__lbl">Bônus 04</p>
-            <div class="bonus-card__title">Checklist de Auditoria Semanal</div>
-            <p class="bonus-card__desc">Pra revisar a semana, corrigir a rota rápido e não deixar a bagunça acumular.</p>
-            <p class="bonus-card__val">Valor: R$17</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Story -->
-  <section class="section-soft-dark">
-    <div class="wrap">
-      <div class="story-layout">
-        <div>
-          <h2 class="display section-title">Eu vivi isso na prática.</h2>
-          <p class="body-p" style="margin-top:24px;">Por anos, usei meu próprio conhecimento como escudo. Lia os livros, fazia as listas, entendia os conceitos. Como se conhecer fosse o mesmo que viver.</p>
-          <p class="body-p">Até que eu tive que admitir uma coisa: o problema nunca foi falta de informação. Faltava uma identidade sólida o suficiente para continuar quando a motivação acabasse.</p>
-          <p class="body-p">O Protocolo de Força Prática nasceu dessa virada.</p>
-        </div>
-        <div>
-          <div class="story-quote">
-            <p>"A disciplina não é um fardo — é o pedágio para o seu chamado. Parei de tentar me organizar e comecei a construir quem eu queria ser."</p>
-            <span class="attr">LEONARDO MONTANHOLI,<br>CRIADOR DA HARD MODE LIFESTYLE.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Offer -->
-  <section class="section-light" id="oferta">
-    <div class="wrap">
-      <div style="text-align:center;margin-bottom:32px">
-        <p class="eyebrow eyebrow--lg">Sua decisão</p>
-        <div class="divider" style="margin:14px auto 0"></div>
-      </div>
-      <div class="offer-wrap">
-        <div class="offer-card">
-          <div class="offer-card__logo"><img src="./assets/img/protocolo-logo.png" alt="Protocolo de Força Prática"></div>
-          <p class="offer-card__includes">10 aulas + 4 bônus · Acesso imediato</p>
-          <ul class="offer-stack">
-            <li><span>Protocolo de Força Prática (10 aulas)</span><span>R$147</span></li>
-            <li><span>Guia de Treino em Casa</span><span>R$37</span></li>
-            <li><span>Diário do Homem de Base</span><span>R$27</span></li>
-            <li><span>Biblioteca Hard Mode</span><span>R$17</span></li>
-            <li><span>Checklist de Auditoria Semanal</span><span>R$17</span></li>
-            <li class="offer-stack__total"><span>Total</span><span>R$245</span></li>
-          </ul>
-          <div class="offer-price-block">
-            <p class="price-anchor price-anchor--offer">DE <span>R$245</span> POR</p>
-            <p class="offer-installments offer-installments--inline">9x de <strong>R$8,80</strong></p>
-            <p class="offer-cash offer-cash--inline"><span class="offer-or-inline">ou</span> <strong>R$67</strong> <span class="offer-cash-suffix">à vista</span></p>
-          </div>
-          <div class="offer-cta">
-            <a href="https://pay.hotmart.com/Y103675280S?checkoutMode=10" class="btn btn--primary" id="btn-checkout">
-              Quero Começar Agora
-            </a>
-            <div class="offer-badges">
-              <span class="offer-badge">100% Online</span>
-              <span class="offer-badge">Acesso Imediato</span>
+        <article class="testimonial">
+          <div class="testimonial__head">
+            <img class="testimonial__photo" src="./assets/img/testimonial-igor.png" alt="Igor C.">
+            <div class="testimonial__identity">
+              <div class="testimonial__author">Igor C.</div>
+              <div class="testimonial__meta">33 anos</div>
             </div>
           </div>
+          <span class="testimonial__pill">Mais postura</span>
+          <p class="testimonial__text">“Eu tinha conteúdo na cabeça, mas passava imagem de cara perdido. Depois que comecei a aplicar o protocolo, minha postura mudou. Hoje eu me comunico melhor, me imponho mais e não fico mais com cara de quem está sempre em dúvida.”</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="testimonial__head">
+            <img class="testimonial__photo" src="./assets/img/testimonial-joao-vitor.png" alt="João Vitor">
+            <div class="testimonial__identity">
+              <div class="testimonial__author">João Vitor</div>
+              <div class="testimonial__meta">25 anos</div>
+            </div>
+          </div>
+          <span class="testimonial__pill">Menos distração</span>
+          <p class="testimonial__text">“Meu problema era viver no automático: celular, vídeo curto, madrugada bagunçada e zero foco. O protocolo me ajudou a colocar ordem na rotina. Pela primeira vez eu senti que estava no controle da minha vida de novo.”</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="testimonial__head">
+            <img class="testimonial__photo" src="./assets/img/testimonial-gabriele.png" alt="Gabriele A.">
+            <div class="testimonial__identity">
+              <div class="testimonial__author">Gabriele A.</div>
+              <div class="testimonial__meta">27 anos</div>
+            </div>
+          </div>
+          <span class="testimonial__pill">Mais direção</span>
+          <p class="testimonial__text">“O que mais me marcou foi ver que disciplina não é viver no limite, e sim ter direção. O protocolo me ajudou a sair da confusão mental, organizar melhor minha semana e parar de começar um monte de coisa sem terminar nenhuma.”</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-soft-dark">
+  <div class="wrap">
+    <div class="section-heading">
+      <h2 class="display section-title">Pra quem é</h2>
+      <p class="section-sub">Se você sabe que está ficando para trás e não quer continuar se enganando, é pra você.</p>
+    </div>
+
+    <div class="forwho-grid">
+      <div class="forwho-col forwho-col--yes">
+        <p class="forwho-col__title">É pra você se...</p>
+        <ul class="forwho-list forwho-list--yes">
+          <li>você sente que sua vida não anda e já cansou de fingir que está tudo bem.</li>
+          <li>você vive prometendo disciplina, mas perde horas em celular, vídeo curto e distração barata.</li>
+          <li>você já tentou mudar várias vezes e sempre voltou pro mesmo lugar.</li>
+          <li>você olha pra si mesmo e sabe que hoje ainda está abaixo do homem que poderia ser.</li>
+          <li>você quer respeito, mas ainda se sente fraco, perdido e sem firmeza.</li>
+          <li>você morre de medo de chegar aos 30 do mesmo jeito que está agora.</li>
+          <li>você sente falta de direção, de base e de um motivo real pra levantar da cama.</li>
+        </ul>
+      </div>
+
+      <div class="forwho-col forwho-col--no">
+        <p class="forwho-col__title">Não é pra você se...</p>
+        <ul class="forwho-list forwho-list--no">
+          <li>você quer só motivação passageira e frase bonita.</li>
+          <li>você ainda está procurando atalho em vez de mudança de verdade.</li>
+          <li>você prefere culpar rotina, família, dinheiro ou falta de tempo.</li>
+          <li>você não está disposto a olhar com honestidade pro homem que virou até aqui.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-light">
+  <div class="wrap">
+    <div class="section-heading">
+      <h2 class="display section-title">Os pilares do protocolo</h2>
+      <p class="section-sub foundation-note">O PFP trabalha os três pilares da Hard Mode ao mesmo tempo, porque não adianta ter força física e continuar perdido por dentro.</p>
+    </div>
+
+    <div class="foundation-grid">
+      <article class="foundation-card">
+        <div class="foundation-card__n">01</div>
+        <div class="foundation-card__title">Força Prática</div>
+        <p class="body-p">Corpo forte não é vaidade — é responsabilidade. A disciplina construída no treino aparece em cada outra área da sua vida.</p>
+      </article>
+
+      <article class="foundation-card">
+        <div class="foundation-card__n">02</div>
+        <div class="foundation-card__title">Trabalho</div>
+        <p class="body-p">Foco profundo e geração de valor real. O bloco que separa quem constrói legado de quem fica apenas ocupado.</p>
+      </article>
+
+      <article class="foundation-card">
+        <div class="foundation-card__n">03</div>
+        <div class="foundation-card__title">Vida Espiritual</div>
+        <p class="body-p">Sem dogma, sem abstração — é o norte que te mantém de pé quando tudo o mais cede.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section-soft-dark">
+  <div class="wrap">
+    <div class="section-heading">
+      <h2 class="display section-title">As 10 aulas do protocolo</h2>
+      <p class="section-sub">O que você vai ver em cada aula e, principalmente, o que isso muda na prática na sua vida.</p>
+    </div>
+
+    <div class="lessons-grid">
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">⚰️</div>
+          <div class="lesson-card__n">Aula 01</div>
         </div>
-        <div class="guarantee">
-          <div class="guarantee__icon">🛡</div>
-          <div>
-            <div class="guarantee__title">Garantia de 7 dias</div>
-            <p class="guarantee__text">Acessa o Protocolo. Aplica as primeiras aulas. Se em 7 dias você não sentir que essa é a base que estava faltando, <strong>devolvo 100% do seu dinheiro.</strong></p>
+        <h3 class="lesson-card__title">O Necrológio</h3>
+        <p class="lesson-card__learn">Você escreve a história que quer que contem no seu velório e cria um filtro claro para cada decisão importante da sua vida.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Você para de viver no automático e começa a agir com direção, peso e consciência do homem que quer se tornar.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🧠</div>
+          <div class="lesson-card__n">Aula 02</div>
+        </div>
+        <h3 class="lesson-card__title">Engenharia de Comportamento</h3>
+        <p class="lesson-card__learn">Você aprende a identificar o que drena sua energia e a eliminar sabotadores por sistema, não por força de vontade.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Você ganha clareza sobre seus gatilhos e deixa de repetir os mesmos erros toda semana.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🌙</div>
+          <div class="lesson-card__n">Aula 03</div>
+        </div>
+        <h3 class="lesson-card__title">Sono Estratégico</h3>
+        <p class="lesson-card__learn">Você entende a base fisiológica que determina a qualidade do dia seguinte e aprende a parar de sabotar sua própria energia.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Mais disposição, mais lucidez e mais capacidade de cumprir o que precisa ser feito.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">☀️</div>
+          <div class="lesson-card__n">Aula 04</div>
+        </div>
+        <h3 class="lesson-card__title">Manhã Blindada</h3>
+        <p class="lesson-card__learn">As primeiras horas do dia deixam de ser reativas e se tornam suas, com uma estrutura que reduz ansiedade e dispersão.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Você começa o dia no comando, não sendo arrastado pelo celular, pela pressa e pelo improviso.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🎯</div>
+          <div class="lesson-card__n">Aula 05</div>
+        </div>
+        <h3 class="lesson-card__title">Trabalho Profundo</h3>
+        <p class="lesson-card__learn">Você aprende a proteger blocos reais de foco absoluto para produzir, estudar e construir algo que tenha valor de verdade.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Menos ocupação vazia, mais execução concreta e mais progresso visível na sua vida profissional.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🏋️</div>
+          <div class="lesson-card__n">Aula 06</div>
+        </div>
+        <h3 class="lesson-card__title">Força Prática</h3>
+        <p class="lesson-card__learn">A disciplina do treino deixa de ser algo solto e passa a funcionar como base de postura, energia e responsabilidade.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Seu corpo começa a acompanhar sua decisão. E isso transborda para confiança, presença e firmeza.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🛐</div>
+          <div class="lesson-card__n">Aula 07</div>
+        </div>
+        <h3 class="lesson-card__title">Vida Espiritual</h3>
+        <p class="lesson-card__learn">Você aprende a cultivar silêncio, direção e ordem interna para não viver refém de ruído, ansiedade e vazio existencial.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Mais paz, mais eixo e uma base espiritual capaz de sustentar o resto da construção.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🧱</div>
+          <div class="lesson-card__n">Aula 08</div>
+        </div>
+        <h3 class="lesson-card__title">Engenharia de Ambiente</h3>
+        <p class="lesson-card__learn">Você redesenha o ambiente para facilitar o comportamento certo e diminuir a fricção de tudo o que costuma te derrubar.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Você para de depender só de força mental e cria um cenário que trabalha a seu favor todos os dias.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🛡️</div>
+          <div class="lesson-card__n">Aula 09</div>
+        </div>
+        <h3 class="lesson-card__title">Protocolo de Crise</h3>
+        <p class="lesson-card__learn">Quando o dia der errado, você sabe como reagir sem transformar uma falha isolada em semanas de queda e culpa.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Você ganha resiliência prática e para de desmoronar toda vez que sai do plano.</div>
+      </article>
+
+      <article class="lesson-card">
+        <div class="lesson-card__top">
+          <div class="lesson-card__badge">🤝</div>
+          <div class="lesson-card__n">Aula 10</div>
+        </div>
+        <h3 class="lesson-card__title">O Compromisso</h3>
+        <p class="lesson-card__learn">Você encerra o protocolo com um posicionamento claro e o início definitivo da construção do homem que decidiu ser.</p>
+        <div class="lesson-card__shift"><strong>O que muda em você</strong>Você sai com uma decisão consolidada, não com mais um pico de empolgação que some em poucos dias.</div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section-light">
+  <div class="wrap">
+    <div class="section-heading">
+      <h2 class="display section-title">Bônus inclusos no protocolo</h2>
+      <p class="section-sub">Os bônus entram pra facilitar a aplicação do Protocolo no dia a dia.</p>
+    </div>
+
+    <div class="bonus-grid">
+      <article class="bonus-card">
+        <div class="bonus-card__media">
+          <img src="./assets/img/hma-guia-treino-em-casa-capa.png" alt="Guia de Treino em Casa">
+        </div>
+        <div class="bonus-card__content">
+          <p class="bonus-card__lbl">Bônus 01</p>
+          <div class="bonus-card__title">Guia de Treino em Casa</div>
+          <p class="bonus-card__desc">Pra você sair da desculpa e manter o treino mesmo quando não dá pra ir pra academia.</p>
+          <p class="bonus-card__val">Valor: R$37</p>
+        </div>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-card__media">
+          <img src="./assets/img/hma-diario-do-homem-de-base-capa.png" alt="Diário do Homem de Base">
+        </div>
+        <div class="bonus-card__content">
+          <p class="bonus-card__lbl">Bônus 02</p>
+          <div class="bonus-card__title">Diário do Homem de Base</div>
+          <p class="bonus-card__desc">Pra organizar a cabeça, registrar o que importa e não deixar o protocolo virar só intenção.</p>
+          <p class="bonus-card__val">Valor: R$27</p>
+        </div>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-card__media">
+          <img src="./assets/img/hma-biblioteca-hard-mode-capa.png" alt="Biblioteca Hard Mode">
+        </div>
+        <div class="bonus-card__content">
+          <p class="bonus-card__lbl">Bônus 03</p>
+          <div class="bonus-card__title">Biblioteca Hard Mode</div>
+          <p class="bonus-card__desc">Pra estudar com direção e alimentar a mente com coisa que realmente fortalece você.</p>
+          <p class="bonus-card__val">Valor: R$17</p>
+        </div>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-card__media">
+          <img src="./assets/img/hma-checklist-auditoria-semanal-capa.png" alt="Checklist de Auditoria Semanal">
+        </div>
+        <div class="bonus-card__content">
+          <p class="bonus-card__lbl">Bônus 04</p>
+          <div class="bonus-card__title">Checklist de Auditoria Semanal</div>
+          <p class="bonus-card__desc">Pra revisar a semana, corrigir a rota rápido e não deixar a bagunça acumular.</p>
+          <p class="bonus-card__val">Valor: R$17</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section-soft-dark">
+  <div class="wrap">
+    <div class="story-layout">
+      <div>
+        <h2 class="display section-title">Eu vivi isso na prática</h2>
+
+        <p class="body-p" style="margin-top:24px;">
+          Por anos, usei meu próprio conhecimento como escudo. Lia os livros, fazia as listas, entendia os conceitos. Como se conhecer fosse o mesmo que viver.
+        </p>
+        <p class="body-p">
+          Até que eu tive que admitir uma coisa: o problema nunca foi falta de informação. Faltava uma identidade sólida o suficiente para continuar quando a motivação acabasse.
+        </p>
+        <p class="body-p">
+          O Protocolo de Força Prática nasceu dessa virada.
+        </p>
+      </div>
+
+      <div>
+        <div class="story-quote">
+          <p>"A disciplina não é um fardo — é o pedágio para o seu chamado. Parei de tentar me organizar e comecei a construir quem eu queria ser."</p>
+          <span class="attr">LEONARDO MONTANHOLI,<br>CRIADOR DA HARD MODE LIFESTYLE.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-light" id="oferta">
+  <div class="wrap">
+    <div class="offer-wrap">
+      <div class="offer-card">
+        <div class="offer-card__logo"><img src="./assets/img/protocolo-logo.png" alt="Protocolo de Força Prática"></div>
+        <p class="offer-card__includes">10 aulas + 4 bônus · Acesso imediato</p>
+
+        <ul class="offer-stack">
+          <li><span>Protocolo de Força Prática (10 aulas)</span><span>R$147</span></li>
+          <li><span>Guia de Treino em Casa</span><span>R$37</span></li>
+          <li><span>Diário do Homem de Base</span><span>R$27</span></li>
+          <li><span>Biblioteca Hard Mode</span><span>R$17</span></li>
+          <li><span>Checklist de Auditoria Semanal</span><span>R$17</span></li>
+          <li class="offer-stack__total"><span>Total</span><span>R$245</span></li>
+        </ul>
+
+        <div class="offer-price-block">
+          <p class="price-anchor price-anchor--offer">DE <span>R$245</span> POR</p>
+          <p class="offer-installments offer-installments--inline">9x de <strong>R$8,80</strong></p>
+          <p class="offer-cash offer-cash--inline"><span class="offer-or-inline">ou</span> <strong>R$67</strong> <span class="offer-cash-suffix">à vista</span></p>
+        </div>
+
+        <div class="offer-cta">
+          <a href="https://pay.hotmart.com/Y103675280S?checkoutMode=10" class="btn btn--primary" id="btn-checkout">
+            Quero Começar Agora
+          </a>
+          <div class="offer-badges">
+            <span class="offer-badge">100% Online</span>
+            <span class="offer-badge">Acesso Imediato</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Closing -->
-  <section class="close section-dark">
-    <div class="wrap wrap--narrow">
-      <h2 class="display close__hl">
-        <span class="close-line">NO DIA DO SEU VELÓRIO</span>
-        <span class="close-line">NINGUÉM VAI LEMBRAR</span>
-        <span class="close-line">DO QUE VOCÊ <em>TENTOU</em> SER.</span>
-      </h2>
-      <p class="close__sub">
-        Vão lembrar do homem que você foi<br>para as pessoas que dependiam de você.<br>
-        A construção começa com uma decisão —<br>
-        <span>e essa decisão é agora.</span>
-      </p>
-      <div class="close__cta">
-        <a href="https://pay.hotmart.com/Y103675280S?checkoutMode=10" class="btn btn--ghost">QUERO O PROTOCOLO POR R$67</a>
-      </div>
-      <p class="close__final">Não deixe para amanhã o homem<br>que você precisa ser hoje.</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section-light">
-    <div class="wrap wrap--narrow">
-      <div class="section-heading">
-        <h2 class="display section-title">Dúvidas frequentes</h2>
-      </div>
-      <div style="margin-top:30px">
-        <div class="faq-item">
-          <div class="faq-q">Por quanto tempo tenho acesso? <span>+</span></div>
-          <p class="faq-a">Acesso por 1 ano. Você paga uma vez e tem acesso por 1 ano a todas as atualizações que fizermos no Protocolo durante o período.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Precisa de experiência prévia? <span>+</span></div>
-          <p class="faq-a">Não. O Protocolo foi construído para quem está começando de verdade.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Em quanto tempo vejo resultado? <span>+</span></div>
-          <p class="faq-a"><strong>A primeira clareza vem na Aula 1.</strong> A fundação começa a se formar nas primeiras duas semanas.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Isso é um curso de produtividade? <span>+</span></div>
-          <p class="faq-a">Não. É um protocolo de construção de identidade. Produtividade é consequência.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">E se eu não gostar? <span>+</span></div>
-          <p class="faq-a"><strong>7 dias de garantia incondicional.</strong> Você acessa, aplica e decide com a experiência. Devolvo 100%.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Já tentei muita coisa. Por que seria diferente? <span>+</span></div>
-          <p class="faq-a">O problema nunca foi o método. Foi a fundação. <strong>O Protocolo começa pelo alicerce.</strong></p>
+      <div class="guarantee">
+        <div class="guarantee__icon">🛡</div>
+        <div>
+          <div class="guarantee__title">Garantia de 7 dias</div>
+          <p class="guarantee__text">Acessa o Protocolo. Aplica as primeiras aulas. Se em 7 dias você não sentir que essa é a base que estava faltando, <strong>devolvo 100% do seu dinheiro.</strong></p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<section class="close section-dark">
+  <div class="wrap wrap--narrow">
+    <h2 class="display close__hl">
+      <span class="close-line">NO DIA DO SEU VELÓRIO</span>
+      <span class="close-line">NINGUÉM VAI LEMBRAR</span>
+      <span class="close-line">DO QUE VOCÊ <em>TENTOU</em> SER</span>
+    </h2>
+    <p class="close__sub">
+      Vão lembrar do homem que você foi<br>
+      para as pessoas que dependiam de você.<br>
+      A construção começa com uma decisão —<br>
+      <span class="close__sub-plain">e essa decisão é agora.</span>
+    </p>
+    <div class="close__cta">
+      <a href="https://pay.hotmart.com/Y103675280S?checkoutMode=10" class="btn btn--ghost">QUERO O PROTOCOLO POR R$67</a>
+    </div>
+    <p class="close__final">Não deixe para amanhã o homem<br>que você precisa ser hoje.</p>
+  </div>
+</section>
+<section class="section-light">
+  <div class="wrap wrap--narrow">
+    <div class="section-heading">
+      <h2 class="display section-title">Dúvidas frequentes</h2>
+    </div>
 
-  <footer>
-    <p>© 2026 Hard Mode Inc. · <a href="#">Privacidade</a> · <a href="#">Termos</a> · <a href="#">Suporte</a></p>
-    <p style="margin-top:4px">Resultados individuais podem variar.</p>
-  </footer>
+    <div style="margin-top:30px;">
+      <div class="faq-item">
+        <div class="faq-q">Por quanto tempo tenho acesso? <span>+</span></div>
+        <p class="faq-a">Acesso por 1 ano. Você paga uma vez e tem acesso por 1 ano a todas as atualizações que fizermos no Protocolo durante o período.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Precisa de experiência prévia? <span>+</span></div>
+        <p class="faq-a">Não. O Protocolo foi construído para quem está começando de verdade.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Em quanto tempo vejo resultado? <span>+</span></div>
+        <p class="faq-a"><strong>A primeira clareza vem na Aula 1.</strong> A fundação começa a se formar nas primeiras duas semanas.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Isso é um curso de produtividade? <span>+</span></div>
+        <p class="faq-a">Não. É um protocolo de construção de identidade. Produtividade é consequência.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se eu não gostar? <span>+</span></div>
+        <p class="faq-a"><strong>7 dias de garantia incondicional.</strong> Você acessa, aplica e decide com a experiência. Devolvo 100%.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Já tentei muita coisa. Por que seria diferente? <span>+</span></div>
+        <p class="faq-a">O problema nunca foi o método. Foi a fundação. <strong>O Protocolo começa pelo alicerce.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>© 2026 Hard Mode Inc. · <a href="#">Privacidade</a> · <a href="#">Termos</a> · <a href="#">Suporte</a></p>
+  <p style="margin-top:4px;">Resultados individuais podem variar.</p>
+</footer>
 
 </div><!-- /sales-section -->
 
@@ -1335,6 +1432,15 @@ function goToLoading() {
   }, 3200);
 }
 
+
+function stopDiagnosisVideo(){
+  const frame = document.getElementById('diag-vsl-player');
+  if(!frame) return;
+  const currentSrc = frame.getAttribute('src');
+  frame.setAttribute('src', '');
+  frame.setAttribute('src', currentSrc);
+}
+
 function showSalesPage() {
   if (typeof fbq !== 'undefined') fbq('track', 'ViewContent');
   document.getElementById('quiz-section').style.display = 'none';
@@ -1351,6 +1457,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+</script>
+
+<script>
+(function(){
+  const track = document.querySelector('.testimonials-track');
+  if(!track) return;
+
+  let looping = false;
+
+  function getOriginals() {
+    return Array.from(track.children).filter(el => !el.dataset.clone);
+  }
+
+  function cleanupClones() {
+    track.querySelectorAll('[data-clone="true"]').forEach(el => el.remove());
+    track.dataset.loopReady = 'false';
+    delete track.dataset.loopWidth;
+  }
+
+  function setupInfiniteTestimonials(){
+    if (window.innerWidth >= 640) {
+      cleanupClones();
+      return;
+    }
+
+    if (track.dataset.loopReady === 'true') return;
+
+    const originals = getOriginals();
+    if (!originals.length) return;
+
+    cleanupClones();
+
+    const fragStart = document.createDocumentFragment();
+    const fragEnd = document.createDocumentFragment();
+
+    originals.forEach(card => {
+      const before = card.cloneNode(true);
+      before.dataset.clone = 'true';
+      fragStart.appendChild(before);
+
+      const after = card.cloneNode(true);
+      after.dataset.clone = 'true';
+      fragEnd.appendChild(after);
+    });
+
+    track.insertBefore(fragStart, track.firstChild);
+    track.appendChild(fragEnd);
+
+    requestAnimationFrame(() => {
+      const firstOriginal = getOriginals()[0];
+      if (!firstOriginal) return;
+      const style = getComputedStyle(track);
+      const gap = parseFloat(style.columnGap || style.gap || 12);
+      const cardWidth = firstOriginal.getBoundingClientRect().width + gap;
+      const loopWidth = originals.length * cardWidth;
+      track.dataset.loopWidth = String(loopWidth);
+      track.dataset.loopReady = 'true';
+      track.scrollLeft = loopWidth;
+    });
+  }
+
+  track.addEventListener('scroll', () => {
+    if (window.innerWidth >= 640) return;
+    if (track.dataset.loopReady !== 'true') return;
+    if (looping) return;
+
+    const loopWidth = parseFloat(track.dataset.loopWidth || '0');
+    if (!loopWidth) return;
+
+    const left = track.scrollLeft;
+    const threshold = loopWidth * 0.35;
+
+    if (left < threshold) {
+      looping = true;
+      track.scrollLeft = left + loopWidth;
+      requestAnimationFrame(() => { looping = false; });
+    } else if (left > loopWidth * 1.65) {
+      looping = true;
+      track.scrollLeft = left - loopWidth;
+      requestAnimationFrame(() => { looping = false; });
+    }
+  }, { passive: true });
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      cleanupClones();
+      setupInfiniteTestimonials();
+    }, 120);
+  });
+
+  window.addEventListener('load', setupInfiniteTestimonials);
+})();
 </script>
 
 </body>
